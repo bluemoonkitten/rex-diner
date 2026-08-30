@@ -4,573 +4,359 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
-  <title>Avaleht | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=90">
+  <title>Rex's Diner</title>
+  <link rel="stylesheet" href="styles.css?v=100">
 
   <style>
-    /* AVALEHE LISAPLOKID – inline CSS, et kujundus töötaks kindlasti */
+    /* =========================================================
+       AVALEHT – AVATUM, VÄHEM KASTE
+       Navy põhitoon + dusty rose aktsendid
+       ========================================================= */
 
-    .home-extra-wrap {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px 82px;
+    body {
+      background:
+        radial-gradient(circle at 92% 8%, rgba(207,120,151,.11), transparent 27rem),
+        radial-gradient(circle at 7% 55%, rgba(33,184,181,.045), transparent 24rem),
+        #041019;
     }
 
-    .home-weekly {
+    .home-page {
+      max-width: 1180px;
+    }
+
+    /* HERO */
+
+    .home-hero {
       position: relative;
       overflow: hidden;
+      min-height: 520px;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(220px, .55fr);
-      gap: 28px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      gap: 50px;
       align-items: center;
-      padding: clamp(28px, 4vw, 44px);
-      background:
-        radial-gradient(circle at 88% 12%, rgba(242,192,75,.15), transparent 13rem),
-        linear-gradient(135deg, #64364b, #a95774 52%, #82445d);
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 30px;
-      box-shadow: 0 22px 55px rgba(0,0,0,.26);
+      padding: 54px 0 66px;
+      border-bottom: 1px solid rgba(207,120,151,.16);
     }
 
-
-    .home-weekly::before {
+    .home-hero::before {
       content: "";
       position: absolute;
-      left: 34px;
-      right: 34px;
+      width: 520px;
+      height: 520px;
+      right: -120px;
       top: 0;
-      height: 4px;
-      border-radius: 0 0 999px 999px;
-      background: linear-gradient(90deg, #cf7897, #dda0b6, #21b8b5);
-    }
-
-    .home-weekly::after {
-      content: "★";
-      position: absolute;
-      right: -6px;
-      bottom: -56px;
-      font-size: 220px;
-      line-height: 1;
-      color: rgba(255,255,255,.045);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(207,120,151,.14), rgba(207,120,151,0) 68%);
       pointer-events: none;
     }
 
-    .home-weekly-copy {
+    .home-hero-copy {
       position: relative;
       z-index: 1;
     }
 
-    .home-weekly-copy h2 {
-      max-width: 660px;
-      margin: 0 0 14px;
-      color: #fff4e4;
+    .home-kicker {
+      margin: 0 0 13px;
+      color: #e1a2b8;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .home-hero h1 {
+      max-width: 760px;
+      margin: 0;
+      color: #fff1d2;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(34px, 4.7vw, 56px);
-      line-height: 1;
+      font-size: clamp(54px, 7vw, 88px);
+      line-height: .92;
+      letter-spacing: -.035em;
     }
 
-    .home-weekly-copy p {
-      max-width: 700px;
-      margin: 0 0 22px;
-      color: #f1dfe8;
+    .home-hero-copy > p:not(.home-kicker) {
+      max-width: 650px;
+      margin: 23px 0 0;
+      color: #b8c7cc;
+      font-size: 17px;
+      line-height: 1.65;
     }
 
-    .home-weekly-items {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin: 0 0 22px;
+      gap: 12px;
+      margin-top: 30px;
     }
 
-    .home-weekly-items span {
-      padding: 7px 11px;
-      border-radius: 999px;
-      background: rgba(4,16,25,.28);
-      border: 1px solid rgba(255,255,255,.09);
-      color: #fff7ea;
+    .hero-quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+      margin-top: 25px;
+      color: #91a8b0;
       font-size: 12px;
+      font-weight: 900;
+    }
+
+    .hero-quick-links a {
+      color: #dda0b6;
+    }
+
+    .hero-quick-links a:hover {
+      color: #fff1d2;
+    }
+
+    .home-hero-logo {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    .home-hero-logo img {
+      width: min(390px, 100%);
+      max-height: 390px;
+      object-fit: contain;
+      filter: drop-shadow(0 24px 45px rgba(0,0,0,.30));
+    }
+
+    /* WEEKLY — one open editorial section */
+
+    .home-weekly-open {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr);
+      gap: 46px;
+      align-items: center;
+      padding: 62px 0;
+      border-bottom: 1px solid rgba(207,120,151,.15);
+    }
+
+    .weekly-copy h2,
+    .story-copy h2,
+    .visit-copy h2 {
+      margin: 0;
+      color: #fff1d2;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.02;
+    }
+
+    .weekly-copy h2 {
+      max-width: 650px;
+      font-size: clamp(38px, 5vw, 58px);
+    }
+
+    .weekly-copy > p {
+      max-width: 650px;
+      margin: 17px 0 0;
+      color: #aebfc6;
+      line-height: 1.65;
+    }
+
+    .weekly-items-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 25px;
+      color: #e8dce0;
+      font-size: 13px;
       font-weight: 800;
     }
 
-    .home-weekly-price {
-      position: relative;
-      z-index: 1;
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      text-align: center;
-      color: #231a05;
-      background: #f2c04b;
-      border: 7px solid rgba(255,255,255,.16);
-      border-radius: 50%;
-      outline: 3px dashed rgba(35,26,5,.62);
-      outline-offset: -15px;
-      box-shadow: 0 16px 30px rgba(0,0,0,.22);
-      transform: rotate(1.5deg);
+    .weekly-items-line span::before {
+      content: "•";
+      margin-right: 8px;
+      color: #cf7897;
     }
 
-    .home-weekly-price span {
+    .weekly-price {
+      position: relative;
+      padding-left: 36px;
+      border-left: 3px solid #cf7897;
+    }
+
+    .weekly-price small {
+      display: block;
+      color: #dda0b6;
       font-size: 10px;
       font-weight: 900;
       letter-spacing: .15em;
+      text-transform: uppercase;
     }
 
-    .home-weekly-price strong {
-      margin: 3px 0;
+    .weekly-price strong {
+      display: block;
+      margin-top: 6px;
+      color: #f2c04b;
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(50px, 6vw, 70px);
-      line-height: 1;
+      font-size: clamp(62px, 8vw, 92px);
+      line-height: .9;
     }
 
-    .home-weekly-price small {
-      font-weight: 800;
+    .weekly-price p {
+      margin: 12px 0 0;
+      color: #b8c4c8;
+      font-size: 13px;
     }
 
-    .home-story {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
-      gap: 22px;
-      margin-top: 24px;
+    .weekly-price b {
+      color: #e1a2b8;
     }
 
-    .home-story-card,
-    .home-location-card {
-      padding: 30px;
-      background:
-        linear-gradient(145deg, rgba(255,255,255,.018), rgba(255,255,255,0)),
-        #0b2330;
-      border: 1px solid rgba(142,189,199,.18);
-      border-radius: 26px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.18);
-    }
-
-    .home-story-card h2,
-    .home-location-card h2 {
-      margin: 0 0 12px;
+    .weekly-price a {
+      display: inline-block;
+      margin-top: 21px;
       color: #fff1d2;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 3.6vw, 40px);
-      line-height: 1;
+      font-size: 12px;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(207,120,151,.55);
+      padding-bottom: 3px;
     }
 
-    .home-story-card p,
-    .home-location-card p {
+    /* STORY + VISIT — open two-column editorial layout */
+
+    .home-about-open {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(350px, .95fr);
+      gap: 68px;
+      padding: 62px 0 35px;
+    }
+
+    .story-copy {
+      padding-right: 10px;
+    }
+
+    .story-copy h2,
+    .visit-copy h2 {
+      font-size: clamp(34px, 4vw, 48px);
+    }
+
+    .story-copy > p,
+    .visit-copy > p {
+      margin: 17px 0 0;
       color: #aebfc6;
+      line-height: 1.65;
     }
 
     .story-route {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
-      margin: 22px 0;
-    }
-
-    .story-route span {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(207,120,151,.12);
-      border: 1px solid rgba(207,120,151,.18);
-      color: #f6dce6;
+      margin: 24px 0 0;
+      color: #f1d9e2;
       font-size: 12px;
       font-weight: 900;
     }
 
-    .quick-info {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
+    .story-route .route-dot {
+      color: #cf7897;
+      font-size: 18px;
+    }
+
+    .story-copy a {
+      display: inline-block;
       margin-top: 24px;
+      color: #dda0b6;
+      font-size: 12px;
+      font-weight: 900;
+      border-bottom: 1px solid rgba(207,120,151,.45);
+      padding-bottom: 3px;
     }
 
-    .quick-info-card {
-      min-height: 145px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 22px;
-      background: #103343;
-      border: 1px solid rgba(121,216,213,.14);
-      border-radius: 20px;
+    .visit-copy {
+      padding-left: 44px;
+      border-left: 1px solid rgba(207,120,151,.18);
     }
 
-    .quick-info-card .quick-icon {
-      margin-bottom: 8px;
-      font-size: 28px;
+    .visit-list {
+      margin-top: 25px;
     }
 
-    .quick-info-card strong {
+    .visit-row {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: 15px;
+      align-items: start;
+      padding: 15px 0;
+    }
+
+    .visit-row + .visit-row {
+      border-top: 1px solid rgba(207,120,151,.10);
+    }
+
+    .visit-icon {
+      font-size: 24px;
+    }
+
+    .visit-row strong {
+      display: block;
       color: #fff1d2;
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    .quick-info-card span {
+    .visit-row span {
+      display: block;
       margin-top: 4px;
-      color: #aebfc6;
-      font-size: 13px;
+      color: #93aab2;
+      font-size: 12px;
+      line-height: 1.5;
     }
+
+    /* MOBILE */
 
     @media (max-width: 900px) {
-      .home-weekly,
-      .home-story {
+      .home-hero,
+      .home-weekly-open,
+      .home-about-open {
         grid-template-columns: 1fr;
       }
 
-      .home-weekly-price {
-        width: min(280px, 74vw);
-        min-height: 250px;
-        justify-self: center;
+      .home-hero {
+        min-height: 0;
+        padding-top: 40px;
       }
 
-      .quick-info {
-        grid-template-columns: 1fr;
+      .home-hero-logo {
+        order: -1;
+        justify-content: start;
+      }
+
+      .home-hero-logo img {
+        width: 230px;
+      }
+
+      .weekly-price {
+        padding-left: 0;
+        padding-top: 26px;
+        border-left: 0;
+        border-top: 3px solid #cf7897;
+      }
+
+      .visit-copy {
+        padding-left: 0;
+        padding-top: 30px;
+        border-left: 0;
+        border-top: 1px solid rgba(207,120,151,.18);
       }
     }
 
-    @media (max-width: 680px) {
-      .home-extra-wrap {
-        padding: 0 20px 68px;
+    @media (max-width: 560px) {
+      .home-hero h1 {
+        font-size: clamp(48px, 16vw, 67px);
       }
 
-      .home-weekly,
-      .home-story-card,
-      .home-location-card {
-        border-radius: 24px;
+      .home-weekly-open,
+      .home-about-open {
+        padding-top: 45px;
+        padding-bottom: 45px;
       }
 
-      .home-weekly {
-        padding: 24px 20px;
-      }
-
-      .home-weekly-price {
-        min-height: 230px;
+      .hero-actions .btn {
+        width: 100%;
       }
     }
   </style>
-
-<style>
-/* =========================================================
-   REX'S – NAVY + ROOSA TASAKAAL
-   Navy jääb põhitooniks, dusty rose on nüüd nähtavam aktsent.
-   ========================================================= */
-
-body {
-  background:
-    radial-gradient(circle at 92% 7%, rgba(207,120,151,.105), transparent 28rem),
-    radial-gradient(circle at 4% 52%, rgba(207,120,151,.055), transparent 25rem),
-    radial-gradient(circle at 78% 92%, rgba(33,184,181,.05), transparent 25rem),
-    #041019 !important;
-}
-
-.site-header {
-  border-bottom-color: rgba(207,120,151,.22) !important;
-  box-shadow: 0 8px 30px rgba(0,0,0,.22);
-}
-
-.site-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent 3%,
-    rgba(207,120,151,.72) 26%,
-    rgba(33,184,181,.48) 62%,
-    transparent 97%);
-  pointer-events: none;
-}
-
-.eyebrow {
-  color: #e1a2b8 !important;
-}
-
-.page-title::after {
-  width: 96px !important;
-  height: 4px !important;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8, #21b8b5) !important;
-}
-
-.main-nav a.active:not(.nav-cta) {
-  color: #fff4f7 !important;
-  background: rgba(207,120,151,.13) !important;
-  border-color: rgba(207,120,151,.22) !important;
-}
-
-.main-nav .nav-cta,
-.btn-primary {
-  background: #a95774 !important;
-}
-
-.main-nav .nav-cta:hover,
-.btn-primary:hover {
-  background: #cf7897 !important;
-}
-
-/* Tavalised sisukaardid saavad nähtava, aga rahuliku roosa kuma */
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.quick-info-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.apply-choice,
-.after-apply,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note,
-.management-card,
-.reason-item,
-.menu-price-note {
-  border-color: rgba(207,120,151,.20) !important;
-}
-
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note {
-  background:
-    radial-gradient(circle at 96% 3%, rgba(207,120,151,.105), transparent 13rem),
-    linear-gradient(145deg, rgba(207,120,151,.025), rgba(255,255,255,0) 52%),
-    #0b2330 !important;
-}
-
-.quick-info-card,
-.management-card,
-.reason-item,
-.job-task,
-.apply-choice {
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.055), rgba(16,51,67,0) 58%),
-    #103343 !important;
-}
-
-.card,
-.home-story-card,
-.home-location-card,
-.jobs-info-card,
-.contact-big-card,
-.contact-management,
-.contact-reasons {
-  position: relative;
-  overflow: hidden;
-}
-
-.card::after,
-.home-story-card::after,
-.home-location-card::after,
-.jobs-info-card::after,
-.contact-big-card::after,
-.contact-management::after,
-.contact-reasons::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  right: auto;
-  top: 0;
-  width: 72px;
-  height: 3px;
-  border-radius: 0 0 999px 999px;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8);
-  opacity: .88;
-  pointer-events: none;
-}
-
-.stat {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(207,120,151,.10), transparent 7rem),
-    #103343 !important;
-  border-color: rgba(207,120,151,.18) !important;
-}
-
-.stat strong,
-.quick-info-card strong {
-  color: #fff0e1 !important;
-}
-
-.site-footer {
-  border-top-color: rgba(207,120,151,.20) !important;
-}
-
-@media (max-width: 760px) {
-  body {
-    background:
-      radial-gradient(circle at 95% 6%, rgba(207,120,151,.08), transparent 18rem),
-      #041019 !important;
-  }
-}
-</style>
-
-
-<style>
-/* Avaleht: nädalapakkumine nüüd sama navy + rose keelega */
-.home-weekly {
-  background:
-    radial-gradient(circle at 90% 10%, rgba(207,120,151,.22), transparent 17rem),
-    radial-gradient(circle at 8% 92%, rgba(33,184,181,.08), transparent 17rem),
-    linear-gradient(135deg, #0b2330, #103343 58%, #081b26) !important;
-  border-color: rgba(207,120,151,.24) !important;
-}
-
-.home-weekly::after {
-  color: rgba(207,120,151,.055) !important;
-}
-
-.home-weekly-items span {
-  background: rgba(207,120,151,.10) !important;
-  border-color: rgba(207,120,151,.18) !important;
-}
-
-.story-route span {
-  background: rgba(207,120,151,.14) !important;
-  border-color: rgba(207,120,151,.25) !important;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 370px;
-  height: 370px;
-  right: 2%;
-  top: 2%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(207,120,151,.14), rgba(207,120,151,0) 69%);
-  pointer-events: none;
-}
-</style>
-
-
-
-
-
-
-
-
-<style>
-/* =========================================================
-   AVALEHT – CASEY KOMPAKTSEM / REX'S LÜHIDALT LAIEM
-   ÕIGED KLASSINIMED
-   ========================================================= */
-
-@media (min-width: 1020px) {
-  .home-story {
-    grid-template-columns: minmax(330px, .72fr) minmax(590px, 1.28fr) !important;
-    gap: 24px !important;
-    align-items: stretch !important;
-  }
-
-  .home-story-card {
-    padding: 27px 28px !important;
-  }
-
-  .home-story-card h2 {
-    font-size: clamp(30px, 2.8vw, 38px) !important;
-    line-height: 1.02 !important;
-    margin-bottom: 11px !important;
-  }
-
-  .home-story-card > p:not(.eyebrow) {
-    margin-bottom: 14px !important;
-    font-size: 13.5px !important;
-    line-height: 1.55 !important;
-  }
-
-  .story-route {
-    gap: 7px !important;
-    margin: 15px 0 18px !important;
-  }
-
-  .story-route span {
-    padding: 7px 10px !important;
-    font-size: 10px !important;
-  }
-
-  .home-story-card .btn {
-    min-height: 40px !important;
-    padding: 8px 15px !important;
-    font-size: 12px !important;
-  }
-
-  .home-location-card {
-    padding: 27px 28px !important;
-  }
-
-  .home-location-card h2 {
-    margin-bottom: 6px !important;
-  }
-
-  .home-location-card .quick-info {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 14px !important;
-    margin-top: 20px !important;
-  }
-
-  .home-location-card .quick-info-card {
-    min-height: 164px !important;
-    padding: 18px !important;
-    justify-content: flex-start !important;
-    background:
-      radial-gradient(circle at 90% 8%, rgba(207,120,151,.10), transparent 7rem),
-      #103343 !important;
-  }
-
-  .home-location-card .quick-icon {
-    display: grid !important;
-    place-items: center !important;
-    width: 42px !important;
-    height: 42px !important;
-    margin-bottom: 12px !important;
-    border-radius: 13px !important;
-    background: rgba(207,120,151,.12) !important;
-    font-size: 22px !important;
-  }
-
-  .home-location-card .quick-info-card strong {
-    font-size: 16px !important;
-    line-height: 1.2 !important;
-  }
-
-  .home-location-card .quick-info-card span {
-    margin-top: 6px !important;
-    font-size: 12px !important;
-    line-height: 1.48 !important;
-  }
-}
-
-@media (min-width: 701px) and (max-width: 1019px) {
-  .home-story {
-    grid-template-columns: 1fr !important;
-  }
-
-  .home-location-card .quick-info {
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  }
-
-  .home-location-card .quick-info-card {
-    min-height: 150px !important;
-    padding: 17px !important;
-  }
-}
-</style>
-
 </head>
 <body>
 
@@ -593,125 +379,112 @@ body {
 </header>
 
 <main class="page">
+  <div class="page-wrap home-page">
 
-  <section class="hero">
-    <div>
-      <p class="eyebrow">RETRO DINER • TUFF</p>
-      <h1>Kodune toit.<br><span>Rex’i moodi.</span></h1>
-      <p class="lead">
-        Mõnus retrohõnguline diner, kus ootavad soojad road,
-        head joogid ja sõbralik teenindus.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="menu.html">Vaata menüüd</a>
-        <a class="btn btn-secondary" href="kontakt.html">Leia meid</a>
-      </div>
-    </div>
-
-    <div class="hero-logo-wrap">
-      <img class="hero-logo" src="logo.png" alt="Rex's Diner logo">
-    </div>
-  </section>
-
-  <section class="home-cards">
-    <article class="home-card">
-      <div class="icon">🍽️</div>
-      <h3>Menüü</h3>
-      <p>Vaata kõiki toite, jooke, snäkke, magusaid ampse ja baarijooke koos hindadega.</p>
-      <a class="btn btn-teal" href="menu.html">Ava menüü</a>
-    </article>
-
-    <article class="home-card">
-      <div class="icon">⭐</div>
-      <h3>Eripakkumine</h3>
-      <p>Igal nädalal võib Rex’s sind üllatada uue eripakkumisega.</p>
-      <a class="btn btn-teal" href="eripakkumine.html">Vaata pakkumist</a>
-    </article>
-
-    <article class="home-card">
-      <div class="icon">💼</div>
-      <h3>Liitu tiimiga</h3>
-      <p>Kas Rex’s võiks olla sinu järgmine töökoht? Vaata lähemalt kandideerimise infot.</p>
-      <a class="btn btn-teal" href="toole.html">Tööle Rex’si</a>
-    </article>
-  </section>
-
-  <div class="home-extra-wrap">
-
-    <section class="home-weekly">
-      <div class="home-weekly-copy">
-        <p class="eyebrow" style="color:#ffe4ef;">31. AUGUST – 6. SEPTEMBER</p>
-        <h2>Selle nädala Rex’s Special</h2>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <p class="home-kicker">🦖 REX’S DINER • SENORA WAY 3056</p>
+        <h1>Kodune toit.<br>Rex’i moodi.</h1>
         <p>
-          Kodune makaroniroog, Kirsi piimakokteil ja Rexi pannkoogid
-          ühe mõnusa hinnaga.
+          Retrohõnguline diner Tuffis, kus Casey’si vana lugu elab edasi
+          uue nime, tuttava menüü ja Rex’si enda näoga.
         </p>
 
-        <div class="home-weekly-items">
-          <span>🍝 Kodune makaroniroog</span>
-          <span>🍒 Kirsi piimakokteil</span>
-          <span>🥞 Rexi pannkoogid</span>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="menu.html">Vaata menüüd</a>
+          <a class="btn btn-secondary" href="kontakt.html">Leia meid</a>
         </div>
 
-        <a class="btn btn-secondary" href="eripakkumine.html">Vaata nädalapakkumist</a>
+        <div class="hero-quick-links">
+          <a href="eripakkumine.html">Nädalapakkumine</a>
+          <a href="meist.html">Meie lugu</a>
+          <a href="toole.html">Liitu tiimiga</a>
+        </div>
       </div>
 
-      <div class="home-weekly-price">
-        <span>NÄDALAHIND</span>
-        <strong>$1995</strong>
-        <small>Säästad $310</small>
+      <div class="home-hero-logo">
+        <img src="logo.png" alt="Rex's Diner">
       </div>
     </section>
 
-    <section class="home-story">
-      <article class="home-story-card">
-        <p class="eyebrow">CASEY’ST REX’SINI</p>
+    <section class="home-weekly-open">
+      <div class="weekly-copy">
+        <p class="home-kicker">31. AUGUST – 6. SEPTEMBER</p>
+        <h2>See nädal Rex’sis.</h2>
+        <p>
+          Kodune makaroniroog, kirsi piimakokteil ja Rexi pannkoogid —
+          lihtne nädalakomplekt, mis sobib nii kiireks ampsuks kui pikemaks istumiseks.
+        </p>
+
+        <div class="weekly-items-line">
+          <span>Kodune makaroniroog</span>
+          <span>Kirsi piimakokteil</span>
+          <span>Rexi pannkoogid</span>
+        </div>
+      </div>
+
+      <div class="weekly-price">
+        <small>Nädalahind</small>
+        <strong>$1995</strong>
+        <p>Tavahind $2305 · <b>Säästad $310</b></p>
+        <a href="eripakkumine.html">Vaata eripakkumist →</a>
+      </div>
+    </section>
+
+    <section class="home-about-open">
+
+      <div class="story-copy">
+        <p class="home-kicker">CASEY’ST REX’SINI</p>
         <h2>Uus nimi, tuttav hing.</h2>
         <p>
-          Enne Rex’s Dineriks saamist tunti meid linnas kui
-          <strong>Casey’s Dinerit</strong> Route 68 ääres. Tänane Rex’s on
-          selle loo järgmine peatükk — uues kodus, kuid osa vanast pärandist
-          elab menüüs siiani edasi.
+          Enne Rex’s Dineriks saamist tunti meid linnas Casey’s Dinerina
+          Route 68 ääres. Tänane Rex’s on selle loo järgmine peatükk —
+          uues kodus, kuid osa vanast pärandist elab menüüs siiani edasi.
         </p>
 
         <div class="story-route">
           <span>Casey’s Diner • 4023</span>
-          <span>→</span>
+          <span class="route-dot">→</span>
           <span>Rex’s Diner • 3056</span>
         </div>
 
-        <a class="btn btn-teal" href="meist.html">Loe meie lugu</a>
-      </article>
+        <a href="meist.html">Loe meie lugu →</a>
+      </div>
 
-      <aside class="home-location-card">
-        <p class="eyebrow">REX’S LÜHIDALT</p>
+      <div class="visit-copy">
+        <p class="home-kicker">REX’S LÜHIDALT</p>
         <h2>Tule läbi.</h2>
 
-        <div class="quick-info">
-          <div class="quick-info-card">
-            <div class="quick-icon">📍</div>
-            <strong>Senora Way</strong>
-            <span>Suuna­kood 3056 • Tuff</span>
+        <div class="visit-list">
+          <div class="visit-row">
+            <div class="visit-icon">📍</div>
+            <div>
+              <strong>Senora Way</strong>
+              <span>Suuna­kood 3056 • Tuff</span>
+            </div>
           </div>
 
-          <div class="quick-info-card">
-            <div class="quick-icon">🍽️</div>
-            <strong>Kodune menüü</strong>
-            <span>Toidud, joogid, magusad ampsud ja baar</span>
+          <div class="visit-row">
+            <div class="visit-icon">🍽️</div>
+            <div>
+              <strong>Kodune menüü</strong>
+              <span>Toidud, joogid, magusad ampsud ja baar.</span>
+            </div>
           </div>
 
-          <div class="quick-info-card">
-            <div class="quick-icon">🦖</div>
-            <strong>Retro diner</strong>
-            <span>Hea toit, tuttavad näod ja Rex’si oma vibe</span>
+          <div class="visit-row">
+            <div class="visit-icon">🦖</div>
+            <div>
+              <strong>Retro diner</strong>
+              <span>Hea toit, tuttavad näod ja Rex’si oma vibe.</span>
+            </div>
           </div>
         </div>
-      </aside>
+      </div>
+
     </section>
 
   </div>
-
 </main>
 
 <footer class="site-footer">
