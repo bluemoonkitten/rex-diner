@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Eripakkumine | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -14,31 +14,104 @@
     <img src="logo.png" alt="Rex's Diner logo" class="brand-logo">
     <span class="brand-text"><strong>REX'S</strong><small>DINER</small></span>
   </a>
+
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+
   <nav id="main-nav" class="main-nav">
-    <a href="index.html">Avaleht</a><a href="menu.html">Menüü</a><a class="active" href="eripakkumine.html">Eripakkumine</a><a href="meist.html">Meist</a><a href="toole.html">Tööle</a><a class="nav-cta" href="kontakt.html">Kontakt</a>
+    <a href="index.html">Avaleht</a>
+    <a href="menu.html">Menüü</a>
+    <a class="active" href="eripakkumine.html">Eripakkumine</a>
+    <a href="meist.html">Meist</a>
+    <a href="toole.html">Tööle</a>
+    <a class="nav-cta" href="kontakt.html">Kontakt</a>
   </nav>
 </header>
 
 <main class="page">
+  <div class="page-wrap weekly-offer-page">
 
-<div class="page-wrap">
-  <div class="page-title">
-    <p class="eyebrow">MIDAGI ERILIST</p>
-    <h1>Eripakkumine</h1>
-    <p>Siia saad hiljem panna jooksva nädala või nädalavahetuse pakkumise, ilma et peaksid avalehte ümber tegema.</p>
-  </div>
-  <section class="special-card">
-    <div>
-      <p class="eyebrow" style="color:#ffe4ca">REX'S SPECIAL</p>
-      <h2>Nädalavahetuse eripakkumine</h2>
-      <p>Rex’s Diner paneb aeg-ajalt kokku piiratud aja kombosid. Kui sul on uus konkreetne pakkumine, saame selle siia ühe muudatusega lisada.</p>
-      <a class="btn btn-secondary" href="menu.html">Vaata tavamenüüd</a>
+    <div class="page-title">
+      <p class="eyebrow">31. AUGUST – 6. SEPTEMBER</p>
+      <h1>Nädalapakkumine</h1>
+      <p>Kolm Rex’s Dineri lemmikut ühes mõnusas nädalakomplektis.</p>
     </div>
-    <div class="special-badge">REX'S<br>SPECIAL</div>
-  </section>
-</div>
 
+    <section class="weekly-offer-hero">
+      <div class="weekly-offer-copy">
+        <div class="weekly-kicker">🦖 REX'S DINERI NÄDALAPAKKUMINE</div>
+        <h2>Kodune, magus ja natuke kirsi moodi.</h2>
+        <p>
+          Selle nädala pakkumises saad ühe korraliku koduse roa,
+          mõnusa kirsi piimakokteili ja Rexi pannkoogid magusaks.
+        </p>
+
+        <div class="weekly-date">
+          <span>📅</span>
+          <div>
+            <small>KEHTIB</small>
+            <strong>31. august – 6. september</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="weekly-price-card">
+        <span class="weekly-price-label">NÄDALAHIND</span>
+        <strong>$1995</strong>
+        <div class="weekly-old-price">Tavahind <del>$2305</del></div>
+        <div class="weekly-save">Säästad $310</div>
+      </div>
+    </section>
+
+    <section class="weekly-items">
+      <article class="weekly-item-card">
+        <div class="weekly-item-icon">🍝</div>
+        <div class="weekly-item-text">
+          <span>TOIT</span>
+          <h3>Kodune makaroniroog</h3>
+        </div>
+        <div class="weekly-item-price">$750</div>
+      </article>
+
+      <article class="weekly-item-card">
+        <div class="weekly-item-icon">🍒</div>
+        <div class="weekly-item-text">
+          <span>JOOK</span>
+          <h3>Kirsi piimakokteil</h3>
+        </div>
+        <div class="weekly-item-price">$875</div>
+      </article>
+
+      <article class="weekly-item-card">
+        <div class="weekly-item-icon">🥞</div>
+        <div class="weekly-item-text">
+          <span>MAGUS</span>
+          <h3>Rexi pannkoogid</h3>
+        </div>
+        <div class="weekly-item-price">$680</div>
+      </article>
+    </section>
+
+    <section class="weekly-summary">
+      <div>
+        <span>Tavahind kokku</span>
+        <strong>$2305</strong>
+      </div>
+      <div class="weekly-summary-main">
+        <span>Nädalapakkumine</span>
+        <strong>$1995</strong>
+      </div>
+      <div>
+        <span>Sinu sääst</span>
+        <strong>$310</strong>
+      </div>
+    </section>
+
+    <div class="weekly-actions">
+      <a class="btn btn-primary" href="menu.html">Vaata kogu menüüd</a>
+      <a class="btn btn-secondary" href="kontakt.html">Leia Rex’s Diner</a>
+    </div>
+
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -46,7 +119,7 @@
   <p>Retro food • Good mood • Tuff</p>
   <small>© <span id="year"></span> Rex's Diner. FiveM roleplay project.</small>
 </footer>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
