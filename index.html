@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=110">
+  <link rel="stylesheet" href="styles.css?v=120">
 
   <style>
     /* =========================================================
@@ -357,6 +357,51 @@
       }
     }
   </style>
+
+<style>
+/* Avalehe püsiv eripakkumise viide — ei vaja iganädalast muutmist */
+.home-weekly-evergreen {
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, .75fr) !important;
+}
+
+.weekly-evergreen-link {
+  margin-top: 24px;
+}
+
+.weekly-evergreen-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  min-height: 170px;
+  color: #dda0b6;
+  border-left: 3px solid #cf7897;
+}
+
+.weekly-evergreen-mark span {
+  font-size: clamp(52px, 7vw, 82px);
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,.22));
+}
+
+.weekly-evergreen-mark strong {
+  color: #f2c04b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2.4vw, 28px);
+  line-height: 1.05;
+  letter-spacing: .05em;
+}
+
+@media (max-width: 900px) {
+  .weekly-evergreen-mark {
+    min-height: 120px;
+    justify-content: flex-start;
+    padding-top: 24px;
+    border-left: 0;
+    border-top: 3px solid #cf7897;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -407,29 +452,27 @@
       </div>
     </section>
 
-    <section class="home-weekly-open">
+    
+    <section class="home-weekly-open home-weekly-evergreen">
       <div class="weekly-copy">
-        <p class="home-kicker">31. AUGUST – 6. SEPTEMBER</p>
-        <h2>See nädal Rex’sis.</h2>
+        <p class="home-kicker">⭐ REX’S NÄDALAPAKKUMINE</p>
+        <h2>Midagi head on alati pakkumisel.</h2>
         <p>
-          Kodune makaroniroog, kirsi piimakokteil ja Rexi pannkoogid —
-          lihtne nädalakomplekt, mis sobib nii kiireks ampsuks kui pikemaks istumiseks.
+          Igal nädalal paneme kokku uue Rex’s Dineri eripakkumise.
+          Vaata, mis seekord menüüsse sattus ja kui palju saad säästa.
         </p>
 
-        <div class="weekly-items-line">
-          <span>Kodune makaroniroog</span>
-          <span>Kirsi piimakokteil</span>
-          <span>Rexi pannkoogid</span>
-        </div>
+        <a class="open-link weekly-evergreen-link" href="eripakkumine.html">
+          Vaata selle nädala eripakkumist →
+        </a>
       </div>
 
-      <div class="weekly-price">
-        <small>Nädalahind</small>
-        <strong>$1995</strong>
-        <p>Tavahind $2305 · <b>Säästad $310</b></p>
-        <a href="eripakkumine.html">Vaata eripakkumist →</a>
+      <div class="weekly-evergreen-mark" aria-hidden="true">
+        <span>🦖</span>
+        <strong>WEEKLY<br>SPECIAL</strong>
       </div>
     </section>
+
 
     <section class="home-about-open">
 
