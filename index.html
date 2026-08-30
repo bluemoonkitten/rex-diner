@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Avaleht | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=20">
+  <link rel="stylesheet" href="styles.css?v=70">
 
   <style>
     /* AVALEHE LISAPLOKID – inline CSS, et kujundus töötaks kindlasti */
@@ -26,10 +26,22 @@
       padding: clamp(28px, 4vw, 44px);
       background:
         radial-gradient(circle at 88% 12%, rgba(242,192,75,.15), transparent 13rem),
-        linear-gradient(135deg, #713047, #b84f74 52%, #8e3c5a);
+        linear-gradient(135deg, #64364b, #a95774 52%, #82445d);
       border: 1px solid rgba(255,255,255,.08);
       border-radius: 30px;
       box-shadow: 0 22px 55px rgba(0,0,0,.26);
+    }
+
+
+    .home-weekly::before {
+      content: "";
+      position: absolute;
+      left: 34px;
+      right: 34px;
+      top: 0;
+      height: 4px;
+      border-radius: 0 0 999px 999px;
+      background: linear-gradient(90deg, #cf7897, #dda0b6, #21b8b5);
     }
 
     .home-weekly::after {
@@ -159,8 +171,8 @@
     .story-route span {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(225,132,165,.12);
-      border: 1px solid rgba(225,132,165,.18);
+      background: rgba(207,120,151,.12);
+      border: 1px solid rgba(207,120,151,.18);
       color: #f6dce6;
       font-size: 12px;
       font-weight: 900;
