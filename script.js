@@ -3,9 +3,9 @@ const nav = document.querySelector('.main-nav');
 
 if (toggle && nav) {
   toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.textContent = isOpen ? '✕' : '☰';
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.textContent = open ? '✕' : '☰';
   });
 
   nav.querySelectorAll('a').forEach(link => {
@@ -17,4 +17,5 @@ if (toggle && nav) {
   });
 }
 
-document.getElementById('year').textContent = new Date().getFullYear();
+const year = document.getElementById('year');
+if (year) year.textContent = new Date().getFullYear();

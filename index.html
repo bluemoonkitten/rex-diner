@@ -1,290 +1,71 @@
 <!doctype html>
 <html lang="et">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0f4f53" />
-  <meta name="description" content="Rex's Diner – retrohõnguline diner Tuffis. Kodused road, joogid, magusad ampsud, kombod ja baarijoogid." />
-  <title>Rex's Diner | Tuff</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#149a9d">
+  <title>Avaleht | Rex's Diner</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#avaleht" aria-label="Rex's Diner avaleht">
-      <img src="logo.png" alt="Rex's Diner logo" class="brand-logo" />
-      <span class="brand-text">
-        <strong>REX'S</strong>
-        <small>DINER</small>
-      </span>
-    </a>
 
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ava menüü">☰</button>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Rex's Diner avaleht">
+    <img src="logo.png" alt="Rex's Diner logo" class="brand-logo">
+    <span class="brand-text"><strong>REX'S</strong><small>DINER</small></span>
+  </a>
+  <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+  <nav id="main-nav" class="main-nav">
+    <a class="active" href="index.html">Avaleht</a><a href="menu.html">Menüü</a><a href="eripakkumine.html">Eripakkumine</a><a href="meist.html">Meist</a><a href="toole.html">Tööle</a><a class="nav-cta" href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
 
-    <nav id="main-nav" class="main-nav">
-      <a href="#avaleht">Avaleht</a>
-      <a href="#menuu">Menüü</a>
-      <a href="#kombod">Kombod</a>
-      <a href="#meist">Meist</a>
-      <a href="#toole">Tööle</a>
-      <a class="nav-cta" href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
+<main class="page">
 
-  <main>
-    <section id="avaleht" class="hero section-pad">
-      <div class="hero-copy">
-        <p class="eyebrow">RETRO DINER • TUFF</p>
-        <h1>Kodune toit.<br><span>Rex’i moodi.</span></h1>
-        <p class="hero-text">
-          Mõnus retrohõnguline diner, kus ootavad soojad road, head joogid,
-          magusad ampsud ja sõbralik teenindus.
-        </p>
+<section class="hero">
+  <div>
+    <p class="eyebrow">RETRO DINER • TUFF</p>
+    <h1>Kodune toit.<br><span>Rex’i moodi.</span></h1>
+    <p class="lead">Mõnus retrohõnguline diner, kus ootavad soojad road, head joogid ja sõbralik teenindus.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="menu.html">Vaata menüüd</a>
+      <a class="btn btn-secondary" href="kontakt.html">Leia meid</a>
+    </div>
+  </div>
+  <div class="hero-logo-wrap">
+    <img class="hero-logo" src="logo.png" alt="Rex's Diner logo">
+  </div>
+</section>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#menuu">Vaata menüüd</a>
-          <a class="btn btn-secondary" href="#kontakt">Leia meid</a>
-        </div>
+<section class="home-cards">
+  <article class="home-card">
+    <div class="icon">🍽️</div>
+    <h3>Menüü</h3>
+    <p>Vaata kõiki toite, jooke, snäkke, magustoite ja baarijooke koos hindadega.</p>
+    <a class="btn btn-teal" href="menu.html">Ava menüü</a>
+  </article>
+  <article class="home-card">
+    <div class="icon">⭐</div>
+    <h3>Eripakkumine</h3>
+    <p>Vaata Rex’s Dineri eripakkumiste ja nädalavahetuse kombode infot.</p>
+    <a class="btn btn-teal" href="eripakkumine.html">Vaata pakkumist</a>
+  </article>
+  <article class="home-card">
+    <div class="icon">💼</div>
+    <h3>Liitu tiimiga</h3>
+    <p>Kas Rex’s võiks olla sinu järgmine töökoht? Vaata lähemalt kandideerimise infot.</p>
+    <a class="btn btn-teal" href="toole.html">Tööle Rex’si</a>
+  </article>
+</section>
 
-        <div class="hero-meta">
-          <span>📍 Senora Way • 3056</span>
-          <span>🍽️ Kohapeal söömine</span>
-          <span>🦖 Rex approved</span>
-        </div>
-      </div>
+</main>
 
-      <div class="hero-logo-card" aria-label="Rex's Diner logo">
-        <div class="hero-badge">TUFF • 3056</div>
-        <img src="logo.png" alt="Rex's Diner" class="hero-logo" />
-        <p>Good food • Good mood</p>
-      </div>
-    </section>
+<footer class="site-footer">
+  <strong>🦖 REX'S DINER</strong>
+  <p>Retro food • Good mood • Tuff</p>
+  <small>© <span id="year"></span> Rex's Diner. FiveM roleplay project.</small>
+</footer>
+<script src="script.js"></script>
 
-    <section class="ticker" aria-label="Rex's Dineri põhisõnumid">
-      <div>★ KODUNE TOIT ★ RETRO ÕHKKOND ★ MAGUSAD AMPSUD ★ KOMBOD ★ BAARIJOOGID ★</div>
-    </section>
-
-    <section id="menuu" class="section-pad menu-section">
-      <div class="section-heading">
-        <p class="eyebrow">REX'S DINER</p>
-        <h2>Menüü</h2>
-        <p>Kõik hinnad on sinu praeguse menüü järgi.</p>
-      </div>
-
-      <div class="menu-grid">
-        <article class="menu-card menu-card-wide">
-          <div class="menu-card-title">
-            <span class="menu-icon">🍲</span>
-            <h3>Toidud</h3>
-          </div>
-          <ul>
-            <li><span>Casey lihapada</span><strong>$950</strong></li>
-            <li><span>Kartuli-Peekoni Panniroog</span><strong>$800</strong></li>
-            <li><span>Kodune kana-riisikauss</span><strong>$890</strong></li>
-            <li><span>Hakklihakaste kartuliga</span><strong>$745</strong></li>
-            <li><span>Kodune makaroniroog</span><strong>$750</strong></li>
-            <li><span>Rexi kanasupp</span><strong>$720</strong></li>
-          </ul>
-        </article>
-
-        <article class="menu-card">
-          <div class="menu-card-title">
-            <span class="menu-icon">🥨</span>
-            <h3>Snäkid</h3>
-          </div>
-          <ul>
-            <li><span>Küüslauguleivad</span><strong>$600</strong></li>
-            <li><span>Juustused küüslauguleivad</span><strong>$700</strong></li>
-            <li><span>Rexi snäkitaldrik</span><strong>$850</strong></li>
-          </ul>
-        </article>
-
-        <article class="menu-card">
-          <div class="menu-card-title">
-            <span class="menu-icon">🍰</span>
-            <h3>Magusad ampsud</h3>
-          </div>
-          <ul>
-            <li><span>Rexi pannkoogid</span><strong>$680</strong></li>
-            <li><span>Šokolaadi-jäätise tops</span><strong>$715</strong></li>
-            <li><span>Casey tiramisu</span><strong>$850</strong></li>
-            <li><span>Ploomi-kooretops</span><strong>$700</strong></li>
-          </ul>
-        </article>
-
-        <article class="menu-card featured-card">
-          <div class="menu-card-title">
-            <span class="menu-icon">🥤</span>
-            <h3>Joogid</h3>
-          </div>
-          <ul>
-            <li><span>Kodune limonaad</span><strong>$715</strong></li>
-            <li><span>Münditee sidruniga</span><strong>$730</strong></li>
-            <li><span>Piparmündi kakao</span><strong>$770</strong></li>
-            <li><span>Mocha</span><strong>$845</strong></li>
-            <li><span>Kirsi piimakokteil</span><strong>$875</strong></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="kombod" class="section-pad combo-section">
-      <div class="section-heading">
-        <p class="eyebrow">MIDAGI ROHKEMAT</p>
-        <h2>Kombod</h2>
-        <p>Valmis komplektid, kui tahad ühe korraga kõhu korralikult täis saada.</p>
-      </div>
-
-      <div class="combo-grid">
-        <article class="combo-card">
-          <div class="combo-topline"><span>⭐</span><strong>$2145</strong></div>
-          <h3>Kaevuri Energiaeine</h3>
-          <p>Kodune kana-riisikauss + Mocha + Šokolaadi-jäätise tops</p>
-        </article>
-
-        <article class="combo-card">
-          <div class="combo-topline"><span>⭐</span><strong>$2295</strong></div>
-          <h3>Casey Kodune Kombo</h3>
-          <p>Casey lihapada + Kodune limonaad + Casey tiramisu</p>
-        </article>
-
-        <article class="combo-card">
-          <div class="combo-topline"><span>⭐</span><strong>$2095</strong></div>
-          <h3>Julm Special</h3>
-          <p>Hakklihakaste kartuliga + Casey tiramisu + Piparmündi kakao</p>
-        </article>
-
-        <article class="combo-card">
-          <div class="combo-topline"><span>⭐</span><strong>$2295</strong></div>
-          <h3>Emilio Special</h3>
-          <p>Rexi kanasupp + Rexi pannkoogid + Münditee sidruniga + Väike Rex</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-pad bar-section">
-      <div class="section-heading">
-        <p class="eyebrow">REX'S BAR</p>
-        <h2>Baarijoogid</h2>
-        <p>Õlled, siidrid, veinid, kokteilid ja mokteilid.</p>
-      </div>
-
-      <div class="bar-grid">
-        <article class="bar-card">
-          <h3>🍺 Õlled</h3>
-          <ul>
-            <li><span>Rexi Kuldne Lager</span><strong>$815</strong></li>
-            <li><span>Raptori Time Ale</span><strong>$845</strong></li>
-          </ul>
-        </article>
-
-        <article class="bar-card">
-          <h3>🍎 Siidrid</h3>
-          <ul>
-            <li><span>Rexi Õunasiider</span><strong>$795</strong></li>
-            <li><span>Kirsi-Rex Siider</span><strong>$825</strong></li>
-          </ul>
-        </article>
-
-        <article class="bar-card">
-          <h3>🍷 Veinid</h3>
-          <ul>
-            <li><span>Rexi Punane Vein</span><strong>$895</strong></li>
-            <li><span>Jurassic Roosa Vein</span><strong>$905</strong></li>
-          </ul>
-        </article>
-
-        <article class="bar-card">
-          <h3>🍹 Kokteilid</h3>
-          <ul>
-            <li><span>Rexi Tropical</span><strong>$925</strong></li>
-            <li><span>Rexi Punane Sangria</span><strong>$945</strong></li>
-          </ul>
-        </article>
-
-        <article class="bar-card bar-card-wide">
-          <h3>✨ Mokteilid</h3>
-          <ul>
-            <li><span>Väike Rex</span><strong>$785</strong></li>
-            <li><span>Roosa Fossiil</span><strong>$805</strong></li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="meist" class="section-pad about-section">
-      <div class="about-copy">
-        <p class="eyebrow">MEIE LUGU</p>
-        <h2>Väike diner suure iseloomuga.</h2>
-        <p>
-          Rex’s Diner on Tuffi retrostiilis söögikoht, kus peamine on lihtne:
-          mõnus toit, hea teenindus ja koht, kuhu tahaks tagasi tulla.
-        </p>
-        <p>
-          Dinerit juhib <strong>Rosabella Lane</strong>, kelle eesmärk on hoida Rex’s
-          soe, omanäoline ja veidi retro — täpselt nii, nagu üks korralik diner olema peab.
-        </p>
-      </div>
-
-      <div class="about-stats">
-        <div><strong>3056</strong><span>asukoht</span></div>
-        <div><strong>100%</strong><span>retro vibe</span></div>
-        <div><strong>🦖</strong><span>Rex approved</span></div>
-      </div>
-    </section>
-
-    <section id="toole" class="jobs section-pad">
-      <div class="jobs-card">
-        <p class="eyebrow">LIITU MEIEGA</p>
-        <h2>Rex’s Diner otsib tiimi uusi inimesi.</h2>
-        <p>
-          Kui sulle meeldib klienditeenindus, retroõhkkond ja aktiivne rollimäng,
-          võib Rex’s olla just sinu koht.
-        </p>
-
-        <div class="jobs-list">
-          <span>✓ Sõbralik suhtlus</span>
-          <span>✓ Aktiivne töö</span>
-          <span>✓ Meeskonnatunne</span>
-        </div>
-
-        <a class="btn btn-primary" href="#kontakt">Kandideerimise info</a>
-      </div>
-    </section>
-
-    <section id="kontakt" class="section-pad contact-section">
-      <div class="section-heading">
-        <p class="eyebrow">TULE LÄBI</p>
-        <h2>Leia Rex’s Diner</h2>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <span class="contact-icon">📍</span>
-          <h3>Asukoht</h3>
-          <p>Senora Way<br><strong>3056</strong><br>Tuff</p>
-        </div>
-
-        <div class="contact-card">
-          <span class="contact-icon">📞</span>
-          <h3>Kontakt</h3>
-          <p>Võta ühendust Rex’s Dineri töötelefoni kaudu või tule kohapeale.</p>
-        </div>
-
-        <div class="contact-card">
-          <span class="contact-icon">💼</span>
-          <h3>Tööavaldus</h3>
-          <p>Tööle kandideerimise info ja avalduse saad Rex’s Dinerist.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <img src="logo.png" alt="Rex's Diner" class="footer-logo" />
-    <p>Retro food • Good mood • Tuff</p>
-    <small>© <span id="year"></span> Rex's Diner. FiveM roleplay project.</small>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
