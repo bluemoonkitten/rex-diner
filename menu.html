@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Menüü | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=200">
+  <link rel="stylesheet" href="styles.css?v=210">
   
 <style>
 /* =========================================================
@@ -376,49 +376,7 @@ body {
 </style>
 
 
-<style>
-.menu-poster-feature {
-  display: grid;
-  grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
-  gap: 44px;
-  align-items: center;
-  padding: 44px 0 52px;
-  border-bottom: 1px solid rgba(207,120,151,.14);
-}
 
-.menu-poster-feature .visual-frame {
-  height: 520px;
-}
-
-.menu-poster-copy h2 {
-  margin: 0;
-  color: #fff1d2;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 4vw, 46px);
-  line-height: 1.03;
-}
-
-.menu-poster-copy p {
-  max-width: 560px;
-  color: #aebfc6;
-  line-height: 1.65;
-}
-
-.menu-poster-copy .visual-mini-label {
-  display: block;
-  margin-bottom: 10px;
-}
-
-@media (max-width: 800px) {
-  .menu-poster-feature {
-    grid-template-columns: 1fr;
-  }
-
-  .menu-poster-feature .visual-frame {
-    height: 420px;
-  }
-}
-</style>
 
 
 <style>
@@ -619,6 +577,53 @@ body::before {
 }
 </style>
 
+
+<style>
+/* Menüü intro ilma suure pildita */
+.menu-retro-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 0 34px;
+  border-bottom: 1px solid rgba(207,120,151,.14);
+}
+
+.menu-retro-intro strong {
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.1;
+}
+
+.menu-retro-intro span {
+  color: #dda0b6;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.menu-retro-intro::after {
+  content: "★";
+  color: #f2c04b;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .menu-retro-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .menu-retro-intro::after {
+    display: none;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -649,26 +654,7 @@ body::before {
       <h1>Menüü</h1>
       <p>Kodune toit, joogid, magusad ampsud ja baar — kõik ühes lihtsas menüüs.</p>
     </div>
-
-
-    <section class="menu-poster-feature">
-      <figure class="visual-frame">
-        <img src="rex-menu-poster.jpg" alt="Rex's Dineri retro menüüposter">
-      </figure>
-
-      <div class="menu-poster-copy">
-        <span class="visual-mini-label">RETRO DINER • GOOD VIBES</span>
-        <h2>Menüü, millel on oma nägu.</h2>
-        <p>
-          Kiire visuaalne pilk Rex’si stiilile — täpne ja alati ajakohane
-          hinnakiri jääb allapoole tekstimenüüsse.
-        </p>
-        <a class="open-link" href="#toidud">Liigu menüü juurde ↓</a>
-      </div>
-    </section>
-
-
-    <div class="menu-open-layout">
+<div class="menu-open-layout">
       <aside class="menu-open-nav">
         <a href="#menu-top">↑ Algusesse</a>
         <a href="#toidud">Toidud</a>
