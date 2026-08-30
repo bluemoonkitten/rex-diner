@@ -5,7 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Meist | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=70">
+  <link rel="stylesheet" href="styles.css?v=81">
+
+<style>
+/* =========================================================
+   REX'S – NAVY + ROOSA TASAKAAL
+   Navy jääb põhitooniks, dusty rose on nüüd nähtavam aktsent.
+   ========================================================= */
+
+body {
+  background:
+    radial-gradient(circle at 92% 7%, rgba(207,120,151,.105), transparent 28rem),
+    radial-gradient(circle at 4% 52%, rgba(207,120,151,.055), transparent 25rem),
+    radial-gradient(circle at 78% 92%, rgba(33,184,181,.05), transparent 25rem),
+    #041019 !important;
+}
+
+.site-header {
+  border-bottom-color: rgba(207,120,151,.22) !important;
+  box-shadow: 0 8px 30px rgba(0,0,0,.22);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 3%,
+    rgba(207,120,151,.72) 26%,
+    rgba(33,184,181,.48) 62%,
+    transparent 97%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  color: #e1a2b8 !important;
+}
+
+.page-title::after {
+  width: 96px !important;
+  height: 4px !important;
+  background: linear-gradient(90deg, #cf7897, #e1a2b8, #21b8b5) !important;
+}
+
+.main-nav a.active:not(.nav-cta) {
+  color: #fff4f7 !important;
+  background: rgba(207,120,151,.13) !important;
+  border-color: rgba(207,120,151,.22) !important;
+}
+
+.main-nav .nav-cta,
+.btn-primary {
+  background: #a95774 !important;
+}
+
+.main-nav .nav-cta:hover,
+.btn-primary:hover {
+  background: #cf7897 !important;
+}
+
+/* Tavalised sisukaardid saavad nähtava, aga rahuliku roosa kuma */
+.card,
+.home-card,
+.home-story-card,
+.home-location-card,
+.quick-info-card,
+.jobs-intro,
+.jobs-info-card,
+.apply-section,
+.apply-choice,
+.after-apply,
+.contact-big-card,
+.contact-management,
+.contact-reasons,
+.contact-jobs-note,
+.management-card,
+.reason-item,
+.menu-price-note {
+  border-color: rgba(207,120,151,.20) !important;
+}
+
+.card,
+.home-card,
+.home-story-card,
+.home-location-card,
+.jobs-intro,
+.jobs-info-card,
+.apply-section,
+.contact-big-card,
+.contact-management,
+.contact-reasons,
+.contact-jobs-note {
+  background:
+    radial-gradient(circle at 96% 3%, rgba(207,120,151,.105), transparent 13rem),
+    linear-gradient(145deg, rgba(207,120,151,.025), rgba(255,255,255,0) 52%),
+    #0b2330 !important;
+}
+
+.quick-info-card,
+.management-card,
+.reason-item,
+.job-task,
+.apply-choice {
+  background:
+    linear-gradient(135deg, rgba(207,120,151,.055), rgba(16,51,67,0) 58%),
+    #103343 !important;
+}
+
+.card,
+.home-story-card,
+.home-location-card,
+.jobs-info-card,
+.contact-big-card,
+.contact-management,
+.contact-reasons {
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after,
+.home-story-card::after,
+.home-location-card::after,
+.jobs-info-card::after,
+.contact-big-card::after,
+.contact-management::after,
+.contact-reasons::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: auto;
+  top: 0;
+  width: 72px;
+  height: 3px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, #cf7897, #e1a2b8);
+  opacity: .88;
+  pointer-events: none;
+}
+
+.stat {
+  background:
+    radial-gradient(circle at 85% 10%, rgba(207,120,151,.10), transparent 7rem),
+    #103343 !important;
+  border-color: rgba(207,120,151,.18) !important;
+}
+
+.stat strong,
+.quick-info-card strong {
+  color: #fff0e1 !important;
+}
+
+.site-footer {
+  border-top-color: rgba(207,120,151,.20) !important;
+}
+
+@media (max-width: 760px) {
+  body {
+    background:
+      radial-gradient(circle at 95% 6%, rgba(207,120,151,.08), transparent 18rem),
+      #041019 !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
