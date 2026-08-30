@@ -5,7 +5,210 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Kontakt | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=40">
+
+  <style>
+    /* KONTAKT LEHT */
+
+    .contact-page {
+      max-width: 1180px;
+    }
+
+    .contact-main-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .contact-big-card,
+    .contact-management,
+    .contact-reasons,
+    .contact-jobs-note {
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.018), rgba(255,255,255,0)),
+        #0b2330;
+      border: 1px solid rgba(142,189,199,.18);
+      border-radius: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.16);
+    }
+
+    .contact-big-card {
+      min-height: 260px;
+      padding: 30px;
+    }
+
+    .contact-big-icon {
+      display: grid;
+      place-items: center;
+      width: 58px;
+      height: 58px;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      background: rgba(225,132,165,.12);
+      border: 1px solid rgba(225,132,165,.18);
+      font-size: 29px;
+    }
+
+    .contact-big-card h2,
+    .contact-management h2,
+    .contact-reasons h2,
+    .contact-jobs-note h2 {
+      margin: 0 0 12px;
+      color: #fff1d2;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      line-height: 1.05;
+    }
+
+    .contact-big-card p,
+    .contact-management p,
+    .contact-reasons p,
+    .contact-jobs-note p {
+      color: #aebfc6;
+    }
+
+    .contact-location-code {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      color: #231a05;
+      background: #f2c04b;
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .contact-management {
+      margin-top: 22px;
+      padding: 30px;
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .management-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 20px;
+      background: #103343;
+      border: 1px solid rgba(121,216,213,.14);
+      border-radius: 20px;
+    }
+
+    .management-avatar {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(225,132,165,.13);
+      font-size: 24px;
+    }
+
+    .management-card h3 {
+      margin: 0 0 4px;
+      color: #fff1d2;
+      font-size: 19px;
+    }
+
+    .management-card span {
+      display: block;
+      margin-bottom: 8px;
+      color: #e184a5;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .management-card p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .contact-bottom-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .contact-reasons,
+    .contact-jobs-note {
+      padding: 28px;
+    }
+
+    .reason-list {
+      display: grid;
+      gap: 11px;
+      margin-top: 18px;
+    }
+
+    .reason-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 13px 15px;
+      background: #103343;
+      border: 1px solid rgba(121,216,213,.12);
+      border-radius: 16px;
+    }
+
+    .reason-item span:first-child {
+      font-size: 20px;
+    }
+
+    .reason-item strong {
+      color: #eef4ef;
+      font-size: 14px;
+    }
+
+    .contact-jobs-note {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(225,132,165,.10), transparent 12rem),
+        #0b2330;
+    }
+
+    .contact-jobs-note .btn {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 860px) {
+      .contact-main-grid,
+      .management-grid,
+      .contact-bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .contact-big-card,
+      .contact-management,
+      .contact-reasons,
+      .contact-jobs-note {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .management-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-jobs-note .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,34 +217,131 @@
     <img src="logo.png" alt="Rex's Diner logo" class="brand-logo">
     <span class="brand-text"><strong>REX'S</strong><small>DINER</small></span>
   </a>
+
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+
   <nav id="main-nav" class="main-nav">
-    <a href="index.html">Avaleht</a><a href="menu.html">Menüü</a><a href="eripakkumine.html">Eripakkumine</a><a href="meist.html">Meist</a><a href="toole.html">Tööle</a><a class="active nav-cta" href="kontakt.html">Kontakt</a>
+    <a href="index.html">Avaleht</a>
+    <a href="menu.html">Menüü</a>
+    <a href="eripakkumine.html">Eripakkumine</a>
+    <a href="meist.html">Meist</a>
+    <a href="toole.html">Tööle</a>
+    <a class="nav-cta active" href="kontakt.html">Kontakt</a>
   </nav>
 </header>
 
 <main class="page">
+  <div class="page-wrap contact-page">
 
-<div class="page-wrap">
-  <div class="page-title">
-    <p class="eyebrow">TULE LÄBI</p>
-    <h1>Kontakt</h1>
-    <p>Rex’s Dineri peamine info ühes kohas.</p>
-  </div>
-  <div class="contact-grid contact-grid-two">
-    <section class="contact-card">
-      <div class="icon">📍</div>
-      <h2>Asukoht</h2>
-      <p>Senora Way<br><strong>3056</strong><br>Tuff</p>
-    </section>
-    <section class="contact-card">
-      <div class="icon">📞</div>
-      <h2>Kontakt</h2>
-      <p>Võta ühendust Rex’s Dineri töötelefoni kaudu või tule kohapeale.</p>
-    </section>
-  </div>
-</div>
+    <div class="page-title">
+      <p class="eyebrow">VÕTA MEIEGA ÜHENDUST</p>
+      <h1>Kontakt</h1>
+      <p>Kui sul on küsimus, koostööidee või tahad lihtsalt teada, kust Rex’si leida, oled õiges kohas.</p>
+    </div>
 
+    <section class="contact-main-grid">
+
+      <article class="contact-big-card">
+        <div class="contact-big-icon">📍</div>
+        <h2>Leia meid</h2>
+        <p>
+          Rex’s Diner asub <strong>Senora Wayl</strong>, Tuffis.
+          Kui tahad tulla kohapeale sööma, küsima või lihtsalt läbi astuma,
+          leiad meid suunakoodilt:
+        </p>
+        <div class="contact-location-code">3056</div>
+      </article>
+
+      <article class="contact-big-card">
+        <div class="contact-big-icon">📞</div>
+        <h2>Võta ühendust</h2>
+        <p>
+          Kõige kiiremini saad meiega ühendust Rex’s Dineri
+          <strong>töötelefoni kaudu</strong> või tulles kohapeale.
+        </p>
+        <p>
+          Kui küsimus vajab juhtkonna tähelepanu, anname info vajadusel
+          edasi õigele inimesele.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="contact-management">
+      <p class="eyebrow">JUHTKOND</p>
+      <h2>Kes hoiab Rex’sil silma peal?</h2>
+      <p>
+        Üldiste, juhtimist puudutavate või olulisemate küsimustega saab pöörduda Rex’s Dineri juhtkonna poole.
+      </p>
+
+      <div class="management-grid">
+        <article class="management-card">
+          <div class="management-avatar">🦖</div>
+          <div>
+            <h3>Rosabella Lane</h3>
+            <span>Omanik</span>
+            <p>
+              Vastutab Rex’s Dineri igapäevase toimimise, suuremate otsuste
+              ja üldise suuna eest.
+            </p>
+          </div>
+        </article>
+
+        <article class="management-card">
+          <div class="management-avatar">🤝</div>
+          <div>
+            <h3>Miyamoto Kenshin</h3>
+            <span>Kaasomanik</span>
+            <p>
+              Toetab juhtimist, aitab igapäevaste küsimuste ja otsustega
+              ning on oluline osa Rex’si toimimisest.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-bottom-grid">
+
+      <article class="contact-reasons">
+        <h2>Mille puhul meiega ühendust võtta?</h2>
+
+        <div class="reason-list">
+          <div class="reason-item">
+            <span>🍽️</span>
+            <strong>Küsimused Rex’s Dineri menüü või teeninduse kohta</strong>
+          </div>
+
+          <div class="reason-item">
+            <span>🤝</span>
+            <strong>Koostööpakkumised ja ettevõtetevahelised kokkulepped</strong>
+          </div>
+
+          <div class="reason-item">
+            <span>💬</span>
+            <strong>Tagasiside, ettepanekud või muud Rex’si puudutavad küsimused</strong>
+          </div>
+
+          <div class="reason-item">
+            <span>📋</span>
+            <strong>Olulisemad teemad, mis vajavad juhtkonna tähelepanu</strong>
+          </div>
+        </div>
+      </article>
+
+      <aside class="contact-jobs-note">
+        <p class="eyebrow">OTSid TÖÖINFOT?</p>
+        <h2>Soovid Rex’si tiimiga liituda?</h2>
+        <p>
+          Tööle kandideerimise info, ootused ja Google Formsi tööavaldus
+          on kõik eraldi Tööle lehel.
+        </p>
+        <a class="btn btn-primary" href="toole.html">Vaata Tööle lehte</a>
+      </aside>
+
+    </section>
+
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -49,7 +349,7 @@
   <p>Retro food • Good mood • Tuff</p>
   <small>© <span id="year"></span> Rex's Diner. FiveM roleplay project.</small>
 </footer>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
