@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Menüü | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=50">
 
 <style>
 /* MENÜÜ KAARDID – inline, et GitHub/browser cache ei saaks seda ära kaotada */
@@ -287,6 +287,410 @@
 }
 </style>
 
+
+<style>
+/* Tagasi algusesse nupp */
+
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  color: #fff6fa;
+  background: #b84f74;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 10px 26px rgba(0,0,0,.28);
+  font-size: 13px;
+  font-weight: 900;
+  transition: transform .16s ease, background .16s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px);
+  background: #e184a5;
+}
+
+.back-to-top span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.back-to-top strong {
+  font-size: 12px;
+}
+
+@media (max-width: 680px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 46px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .back-to-top strong {
+    display: none;
+  }
+}
+</style>
+
+
+<style>
+/* =========================================================
+   MENÜÜ STICKY KATEGOORIARIBA
+   ========================================================= */
+
+.menu-scroll-layout {
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.menu-side-nav {
+  position: sticky;
+  top: 104px;
+  z-index: 25;
+}
+
+.menu-side-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px;
+  background:
+    linear-gradient(145deg, rgba(225,132,165,.07), rgba(33,184,181,.035)),
+    #0b2330;
+  border: 1px solid rgba(142,189,199,.18);
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+.menu-side-label {
+  padding: 4px 8px 8px;
+  color: #79d8d5;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .18em;
+}
+
+.menu-side-link {
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 9px 11px;
+  border-radius: 13px;
+  color: #dce8e8;
+  border: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 900;
+  transition:
+    background .16s ease,
+    color .16s ease,
+    border-color .16s ease,
+    transform .16s ease;
+}
+
+.menu-side-link:hover {
+  transform: translateX(2px);
+  color: #fff8ed;
+  background: rgba(225,132,165,.11);
+  border-color: rgba(225,132,165,.16);
+}
+
+.menu-side-link.active {
+  color: #1d1420;
+  background: #e184a5;
+  border-color: rgba(255,255,255,.14);
+  box-shadow: 0 7px 16px rgba(0,0,0,.18);
+}
+
+.menu-top-link {
+  margin-bottom: 4px;
+  color: #f2c04b;
+  background: rgba(242,192,75,.07);
+  border-color: rgba(242,192,75,.12);
+}
+
+.menu-top-link:hover {
+  color: #241a04;
+  background: #f2c04b;
+  border-color: #f2c04b;
+}
+
+.menu-scroll-content {
+  min-width: 0;
+}
+
+.menu-price-note {
+  margin-bottom: 24px;
+  padding: 17px 20px;
+  background:
+    linear-gradient(135deg, rgba(225,132,165,.07), rgba(33,184,181,.045)),
+    #0b2330;
+  border: 1px solid rgba(142,189,199,.18);
+  border-radius: 19px;
+}
+
+.menu-price-note p {
+  margin: 0;
+  color: #aebfc6;
+  font-size: 13px;
+}
+
+.menu-price-note a {
+  color: #e184a5;
+  font-weight: 900;
+}
+
+.menu-category {
+  scroll-margin-top: 104px !important;
+}
+
+/* Tablet ja telefon: kategooriariba muutub horisontaalseks */
+@media (max-width: 900px) {
+  .menu-scroll-layout {
+    display: block;
+  }
+
+  .menu-side-nav {
+    top: 72px;
+    margin: 0 -2px 22px;
+    background: rgba(6,21,31,.94);
+    backdrop-filter: blur(14px);
+  }
+
+  .menu-side-inner {
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+    padding: 10px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    border-radius: 18px;
+  }
+
+  .menu-side-label {
+    display: none;
+  }
+
+  .menu-side-link {
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 8px 12px;
+    white-space: nowrap;
+    border-radius: 999px;
+  }
+
+  .menu-side-link:hover {
+    transform: translateY(-1px);
+  }
+
+  .menu-top-link {
+    margin-bottom: 0;
+  }
+
+  .menu-category {
+    scroll-margin-top: 135px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .menu-side-inner {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  .menu-side-link {
+    font-size: 11px;
+  }
+}
+</style>
+
+
+<style>
+/* =========================================================
+   STICKY MENÜÜRIBA – PÄRISELT KÕRVAL, MITTE SISU PEAL
+   ========================================================= */
+
+/* Laiem konteiner ainult menüüle, et vasak külgriba ei võtaks kaartidelt ruumi */
+.menu-page {
+  max-width: 1450px !important;
+}
+
+/* Külgriba + menüü sisu on kaks päris eraldi veergu */
+.menu-scroll-layout {
+  display: grid !important;
+  grid-template-columns: 165px minmax(0, 1180px) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  justify-content: center !important;
+}
+
+/* Külgriba ei asu menüü sisu kohal */
+.menu-side-nav {
+  position: sticky !important;
+  top: 104px !important;
+  width: 165px !important;
+  min-width: 165px !important;
+  z-index: 20 !important;
+  align-self: start !important;
+}
+
+.menu-side-inner {
+  width: 100% !important;
+}
+
+/* Menüü sisu jääb alati oma veergu */
+.menu-scroll-content {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 1180px !important;
+}
+
+/* Veidi rohkem ruumi kaartidele */
+.menu-scroll-content .menu-category {
+  width: 100% !important;
+}
+
+/* Kui ekraan hakkab kitsaks jääma, viime riba üles enne,
+   kui see saab menüü kaartidele liiga lähedale minna */
+@media (max-width: 1180px) {
+  .menu-page {
+    max-width: 1180px !important;
+  }
+
+  .menu-scroll-layout {
+    display: block !important;
+  }
+
+  .menu-side-nav {
+    position: sticky !important;
+    top: 72px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 0 22px !important;
+    z-index: 30 !important;
+  }
+
+  .menu-side-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    padding: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  .menu-side-label {
+    display: none !important;
+  }
+
+  .menu-side-link {
+    flex: 0 0 auto !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+  }
+
+  .menu-scroll-content {
+    max-width: none !important;
+  }
+
+  .menu-category {
+    scroll-margin-top: 140px !important;
+  }
+}
+</style>
+
+
+<style>
+/* =========================================================
+   LÕPLIK PARANDUS: MENÜÜRIBA PÄRISELT VASAKUS SERVAS
+   ========================================================= */
+
+@media (min-width: 1281px) {
+  .menu-page {
+    max-width: 1180px !important;
+    position: relative !important;
+  }
+
+  .menu-scroll-layout {
+    display: block !important;
+  }
+
+  .menu-scroll-content {
+    width: 100% !important;
+    max-width: 1180px !important;
+  }
+
+  .menu-side-nav {
+    position: fixed !important;
+    top: 118px !important;
+    left: max(18px, calc(50vw - 760px)) !important;
+    width: 170px !important;
+    min-width: 170px !important;
+    z-index: 25 !important;
+  }
+
+  .menu-side-inner {
+    width: 170px !important;
+  }
+}
+
+/* Keskmisel ja väiksel ekraanil jääb riba turvaliselt üles */
+@media (max-width: 1280px) {
+  .menu-scroll-layout {
+    display: block !important;
+  }
+
+  .menu-side-nav {
+    position: sticky !important;
+    top: 72px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 0 22px !important;
+    z-index: 30 !important;
+  }
+
+  .menu-side-inner {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 7px !important;
+    overflow-x: auto !important;
+    padding: 10px !important;
+    white-space: nowrap !important;
+  }
+
+  .menu-side-label {
+    display: none !important;
+  }
+
+  .menu-side-link {
+    flex: 0 0 auto !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+    border-radius: 999px !important;
+  }
+
+  .menu-scroll-content {
+    max-width: none !important;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -309,7 +713,7 @@
 </header>
 
 <main class="page">
-  <div class="page-wrap menu-page">
+  <div class="page-wrap menu-page" id="menu-top">
 
     <div class="page-title">
       <p class="eyebrow">REX'S DINER</p>
@@ -317,25 +721,33 @@
       <p>Vali oma lemmik — iga toit, jook ja maius on nüüd jälle eraldi kaardil.</p>
     </div>
 
+    
+    <div class="menu-scroll-layout">
 
-    <section class="menu-quick-info">
-      <p>
-        Kõik siin lehel olevad hinnad on Rex’s Dineri tavahinnad.
-        Jooksvad nädala- ja eripakkumised leiad eraldi
-        <a href="eripakkumine.html">Eripakkumise lehelt</a>.
-      </p>
+      <aside class="menu-side-nav" aria-label="Menüü kategooriad">
+        <div class="menu-side-inner">
+          <span class="menu-side-label">MENÜÜ</span>
+          <a class="menu-side-link menu-top-link" href="#menu-top">↑ Algusesse</a>
+          <a class="menu-side-link active" href="#toidud" data-menu-target="toidud">🍲 Toidud</a>
+          <a class="menu-side-link" href="#joogid" data-menu-target="joogid">🥤 Joogid</a>
+          <a class="menu-side-link" href="#snakid" data-menu-target="snakid">🥨 Snäkid</a>
+          <a class="menu-side-link" href="#magusad" data-menu-target="magusad">🍰 Magusad</a>
+          <a class="menu-side-link" href="#kombod" data-menu-target="kombod">⭐ Kombod</a>
+          <a class="menu-side-link" href="#baar" data-menu-target="baar">🍸 Baar</a>
+        </div>
+      </aside>
 
-      <nav class="menu-quick-nav" aria-label="Menüü kategooriad">
-        <a href="#toidud">🍲 Toidud</a>
-        <a href="#joogid">🥤 Joogid</a>
-        <a href="#snakid">🥨 Snäkid</a>
-        <a href="#magusad">🍰 Magusad</a>
-        <a href="#kombod">⭐ Kombod</a>
-        <a href="#baar">🍸 Baar</a>
-      </nav>
-    </section>
+      <div class="menu-scroll-content">
 
-    <section class="menu-category" id="toidud">
+        <section class="menu-price-note">
+          <p>
+            Kõik siin lehel olevad hinnad on Rex’s Dineri tavahinnad.
+            Jooksvad nädala- ja eripakkumised leiad
+            <a href="eripakkumine.html">Eripakkumise lehelt</a>.
+          </p>
+        </section>
+
+<section class="menu-category" id="toidud">
       <div class="menu-category-heading">
         <span class="category-icon">🍲</span>
         <div>
@@ -634,7 +1046,12 @@
 
     </section>
 
+
+      </div>
+    </div>
+
   </div>
+
 </main>
 
 <footer class="site-footer">
@@ -644,5 +1061,42 @@
 </footer>
 
 <script src="script.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sectionLinks = [...document.querySelectorAll('.menu-side-link[data-menu-target]')];
+  const sections = sectionLinks
+    .map(link => document.getElementById(link.dataset.menuTarget))
+    .filter(Boolean);
+
+  if (!sectionLinks.length || !sections.length || !('IntersectionObserver' in window)) return;
+
+  const setActive = (id) => {
+    sectionLinks.forEach(link => {
+      link.classList.toggle('active', link.dataset.menuTarget === id);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter(entry => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+    if (visible.length) {
+      setActive(visible[0].target.id);
+    }
+  }, {
+    rootMargin: '-18% 0px -62% 0px',
+    threshold: [0.05, 0.2, 0.4]
+  });
+
+  sections.forEach(section => observer.observe(section));
+
+  sectionLinks.forEach(link => {
+    link.addEventListener('click', () => setActive(link.dataset.menuTarget));
+  });
+});
+</script>
+
 </body>
 </html>
