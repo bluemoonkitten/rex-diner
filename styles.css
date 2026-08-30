@@ -50,11 +50,9 @@ img { max-width: 100%; }
   gap: 10px;
 }
 .brand-logo {
-  width: clamp(40px, 4.5vw, 58px);
-  height: auto;
-  max-height: 58px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
-  flex-shrink: 1;
 }
 .brand-text strong {
   display: block;
@@ -168,23 +166,17 @@ img { max-width: 100%; }
 .btn-teal { background: var(--teal); color: #fff; }
 
 .hero-logo-wrap {
-  width: 100%;
-  min-height: clamp(280px, 42vw, 510px);
+  min-height: 510px;
   display: grid;
   place-items: center;
-  padding: clamp(18px, 3vw, 34px);
-  overflow: hidden;
+  padding: 34px;
   background: linear-gradient(145deg, #fffdf6, #fff2d2);
   border: 1px solid var(--line);
-  border-radius: clamp(26px, 4vw, 42px);
+  border-radius: 42px;
   box-shadow: var(--shadow);
 }
 .hero-logo {
-  display: block;
-  width: clamp(190px, 34vw, 430px);
-  max-width: 88%;
-  height: auto;
-  object-fit: contain;
+  width: min(430px, 100%);
   filter: drop-shadow(0 14px 18px rgba(7,24,46,.16));
 }
 
@@ -395,6 +387,7 @@ img { max-width: 100%; }
 
 @media (max-width: 760px) {
   .site-header { min-height: 72px; }
+  .brand-logo { width: 50px; height: 50px; }
   .menu-toggle { display: block; }
   .main-nav {
     position: absolute;
@@ -416,15 +409,7 @@ img { max-width: 100%; }
   .hero { padding: 42px 20px 66px; }
   .hero h1 { font-size: clamp(48px, 16vw, 70px); }
   .hero p.lead { font-size: 18px; }
-  .hero-logo-wrap {
-    min-height: clamp(250px, 78vw, 330px);
-    padding: 18px;
-    border-radius: 28px;
-  }
-  .hero-logo {
-    width: min(72vw, 320px);
-    max-width: 88%;
-  }
+  .hero-logo-wrap { min-height: 330px; padding: 22px; border-radius: 28px; }
   .page-wrap { padding: 48px 20px 70px; }
   .home-cards { margin-top: -20px; padding: 0 20px; }
   .stat-grid { grid-template-columns: 1fr; }
