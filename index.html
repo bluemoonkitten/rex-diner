@@ -5,7 +5,238 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Avaleht | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20">
+
+  <style>
+    /* AVALEHE LISAPLOKID – inline CSS, et kujundus töötaks kindlasti */
+
+    .home-extra-wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px 82px;
+    }
+
+    .home-weekly {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(220px, .55fr);
+      gap: 28px;
+      align-items: center;
+      padding: clamp(28px, 4vw, 44px);
+      background:
+        radial-gradient(circle at 88% 12%, rgba(242,192,75,.15), transparent 13rem),
+        linear-gradient(135deg, #713047, #b84f74 52%, #8e3c5a);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 30px;
+      box-shadow: 0 22px 55px rgba(0,0,0,.26);
+    }
+
+    .home-weekly::after {
+      content: "★";
+      position: absolute;
+      right: -6px;
+      bottom: -56px;
+      font-size: 220px;
+      line-height: 1;
+      color: rgba(255,255,255,.045);
+      pointer-events: none;
+    }
+
+    .home-weekly-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .home-weekly-copy h2 {
+      max-width: 660px;
+      margin: 0 0 14px;
+      color: #fff4e4;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(34px, 4.7vw, 56px);
+      line-height: 1;
+    }
+
+    .home-weekly-copy p {
+      max-width: 700px;
+      margin: 0 0 22px;
+      color: #f1dfe8;
+    }
+
+    .home-weekly-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 22px;
+    }
+
+    .home-weekly-items span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(4,16,25,.28);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #fff7ea;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .home-weekly-price {
+      position: relative;
+      z-index: 1;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+      color: #231a05;
+      background: #f2c04b;
+      border: 7px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+      outline: 3px dashed rgba(35,26,5,.62);
+      outline-offset: -15px;
+      box-shadow: 0 16px 30px rgba(0,0,0,.22);
+      transform: rotate(1.5deg);
+    }
+
+    .home-weekly-price span {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .15em;
+    }
+
+    .home-weekly-price strong {
+      margin: 3px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(50px, 6vw, 70px);
+      line-height: 1;
+    }
+
+    .home-weekly-price small {
+      font-weight: 800;
+    }
+
+    .home-story {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .home-story-card,
+    .home-location-card {
+      padding: 30px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.018), rgba(255,255,255,0)),
+        #0b2330;
+      border: 1px solid rgba(142,189,199,.18);
+      border-radius: 26px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+    }
+
+    .home-story-card h2,
+    .home-location-card h2 {
+      margin: 0 0 12px;
+      color: #fff1d2;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3.6vw, 40px);
+      line-height: 1;
+    }
+
+    .home-story-card p,
+    .home-location-card p {
+      color: #aebfc6;
+    }
+
+    .story-route {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .story-route span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(225,132,165,.12);
+      border: 1px solid rgba(225,132,165,.18);
+      color: #f6dce6;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .quick-info {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .quick-info-card {
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 22px;
+      background: #103343;
+      border: 1px solid rgba(121,216,213,.14);
+      border-radius: 20px;
+    }
+
+    .quick-info-card .quick-icon {
+      margin-bottom: 8px;
+      font-size: 28px;
+    }
+
+    .quick-info-card strong {
+      color: #fff1d2;
+      font-size: 17px;
+    }
+
+    .quick-info-card span {
+      margin-top: 4px;
+      color: #aebfc6;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .home-weekly,
+      .home-story {
+        grid-template-columns: 1fr;
+      }
+
+      .home-weekly-price {
+        width: min(280px, 74vw);
+        min-height: 250px;
+        justify-self: center;
+      }
+
+      .quick-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .home-extra-wrap {
+        padding: 0 20px 68px;
+      }
+
+      .home-weekly,
+      .home-story-card,
+      .home-location-card {
+        border-radius: 24px;
+      }
+
+      .home-weekly {
+        padding: 24px 20px;
+      }
+
+      .home-weekly-price {
+        min-height: 230px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,49 +245,138 @@
     <img src="logo.png" alt="Rex's Diner logo" class="brand-logo">
     <span class="brand-text"><strong>REX'S</strong><small>DINER</small></span>
   </a>
+
   <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">☰</button>
+
   <nav id="main-nav" class="main-nav">
-    <a class="active" href="index.html">Avaleht</a><a href="menu.html">Menüü</a><a href="eripakkumine.html">Eripakkumine</a><a href="meist.html">Meist</a><a href="toole.html">Tööle</a><a class="nav-cta" href="kontakt.html">Kontakt</a>
+    <a class="active" href="index.html">Avaleht</a>
+    <a href="menu.html">Menüü</a>
+    <a href="eripakkumine.html">Eripakkumine</a>
+    <a href="meist.html">Meist</a>
+    <a href="toole.html">Tööle</a>
+    <a class="nav-cta" href="kontakt.html">Kontakt</a>
   </nav>
 </header>
 
 <main class="page">
 
-<section class="hero">
-  <div>
-    <p class="eyebrow">RETRO DINER • TUFF</p>
-    <h1>Kodune toit.<br><span>Rex’i moodi.</span></h1>
-    <p class="lead">Mõnus retrohõnguline diner, kus ootavad soojad road, head joogid ja sõbralik teenindus.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="menu.html">Vaata menüüd</a>
-      <a class="btn btn-secondary" href="kontakt.html">Leia meid</a>
-    </div>
-  </div>
-  <div class="hero-logo-wrap">
-    <img class="hero-logo" src="logo.png" alt="Rex's Diner logo">
-  </div>
-</section>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">RETRO DINER • TUFF</p>
+      <h1>Kodune toit.<br><span>Rex’i moodi.</span></h1>
+      <p class="lead">
+        Mõnus retrohõnguline diner, kus ootavad soojad road,
+        head joogid ja sõbralik teenindus.
+      </p>
 
-<section class="home-cards">
-  <article class="home-card">
-    <div class="icon">🍽️</div>
-    <h3>Menüü</h3>
-    <p>Vaata kõiki toite, jooke, snäkke, magustoite ja baarijooke koos hindadega.</p>
-    <a class="btn btn-teal" href="menu.html">Ava menüü</a>
-  </article>
-  <article class="home-card">
-    <div class="icon">⭐</div>
-    <h3>Eripakkumine</h3>
-    <p>Vaata Rex’s Dineri eripakkumiste ja nädalavahetuse kombode infot.</p>
-    <a class="btn btn-teal" href="eripakkumine.html">Vaata pakkumist</a>
-  </article>
-  <article class="home-card">
-    <div class="icon">💼</div>
-    <h3>Liitu tiimiga</h3>
-    <p>Kas Rex’s võiks olla sinu järgmine töökoht? Vaata lähemalt kandideerimise infot.</p>
-    <a class="btn btn-teal" href="toole.html">Tööle Rex’si</a>
-  </article>
-</section>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="menu.html">Vaata menüüd</a>
+        <a class="btn btn-secondary" href="kontakt.html">Leia meid</a>
+      </div>
+    </div>
+
+    <div class="hero-logo-wrap">
+      <img class="hero-logo" src="logo.png" alt="Rex's Diner logo">
+    </div>
+  </section>
+
+  <section class="home-cards">
+    <article class="home-card">
+      <div class="icon">🍽️</div>
+      <h3>Menüü</h3>
+      <p>Vaata kõiki toite, jooke, snäkke, magusaid ampse ja baarijooke koos hindadega.</p>
+      <a class="btn btn-teal" href="menu.html">Ava menüü</a>
+    </article>
+
+    <article class="home-card">
+      <div class="icon">⭐</div>
+      <h3>Eripakkumine</h3>
+      <p>Igal nädalal võib Rex’s sind üllatada uue eripakkumisega.</p>
+      <a class="btn btn-teal" href="eripakkumine.html">Vaata pakkumist</a>
+    </article>
+
+    <article class="home-card">
+      <div class="icon">💼</div>
+      <h3>Liitu tiimiga</h3>
+      <p>Kas Rex’s võiks olla sinu järgmine töökoht? Vaata lähemalt kandideerimise infot.</p>
+      <a class="btn btn-teal" href="toole.html">Tööle Rex’si</a>
+    </article>
+  </section>
+
+  <div class="home-extra-wrap">
+
+    <section class="home-weekly">
+      <div class="home-weekly-copy">
+        <p class="eyebrow" style="color:#ffe4ef;">31. AUGUST – 6. SEPTEMBER</p>
+        <h2>Selle nädala Rex’s Special</h2>
+        <p>
+          Kodune makaroniroog, Kirsi piimakokteil ja Rexi pannkoogid
+          ühe mõnusa hinnaga.
+        </p>
+
+        <div class="home-weekly-items">
+          <span>🍝 Kodune makaroniroog</span>
+          <span>🍒 Kirsi piimakokteil</span>
+          <span>🥞 Rexi pannkoogid</span>
+        </div>
+
+        <a class="btn btn-secondary" href="eripakkumine.html">Vaata nädalapakkumist</a>
+      </div>
+
+      <div class="home-weekly-price">
+        <span>NÄDALAHIND</span>
+        <strong>$1995</strong>
+        <small>Säästad $310</small>
+      </div>
+    </section>
+
+    <section class="home-story">
+      <article class="home-story-card">
+        <p class="eyebrow">CASEY’ST REX’SINI</p>
+        <h2>Uus nimi, tuttav hing.</h2>
+        <p>
+          Enne Rex’s Dineriks saamist tunti meid linnas kui
+          <strong>Casey’s Dinerit</strong> Route 68 ääres. Tänane Rex’s on
+          selle loo järgmine peatükk — uues kodus, kuid osa vanast pärandist
+          elab menüüs siiani edasi.
+        </p>
+
+        <div class="story-route">
+          <span>Casey’s Diner • 4023</span>
+          <span>→</span>
+          <span>Rex’s Diner • 3056</span>
+        </div>
+
+        <a class="btn btn-teal" href="meist.html">Loe meie lugu</a>
+      </article>
+
+      <aside class="home-location-card">
+        <p class="eyebrow">REX’S LÜHIDALT</p>
+        <h2>Tule läbi.</h2>
+
+        <div class="quick-info">
+          <div class="quick-info-card">
+            <div class="quick-icon">📍</div>
+            <strong>Senora Way</strong>
+            <span>Suuna­kood 3056 • Tuff</span>
+          </div>
+
+          <div class="quick-info-card">
+            <div class="quick-icon">🍽️</div>
+            <strong>Kodune menüü</strong>
+            <span>Toidud, joogid, magusad ampsud ja baar</span>
+          </div>
+
+          <div class="quick-info-card">
+            <div class="quick-icon">🦖</div>
+            <strong>Retro diner</strong>
+            <span>Hea toit, tuttavad näod ja Rex’si oma vibe</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+  </div>
 
 </main>
 
@@ -65,7 +385,7 @@
   <p>Retro food • Good mood • Tuff</p>
   <small>© <span id="year"></span> Rex's Diner. FiveM roleplay project.</small>
 </footer>
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
