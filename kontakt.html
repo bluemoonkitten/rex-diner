@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Kontakt | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=110">
+  <link rel="stylesheet" href="styles.css?v=150">
   
 <style>
 /* =========================================================
@@ -214,6 +214,147 @@ body {
 }
 </style>
 
+
+<style>
+/* =========================================================
+   REX'S VISUAL REFRESH
+   Silver-Diner-inspired principle:
+   large visuals + short copy + open sections
+   ========================================================= */
+
+.visual-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #0b2330;
+  border: 1px solid rgba(207,120,151,.18);
+}
+
+.visual-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.visual-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(4,16,25,.82);
+  backdrop-filter: blur(8px);
+  color: #fff1d2;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.retro-check-line {
+  height: 7px;
+  margin: 0;
+  border: 0;
+  opacity: .7;
+  background:
+    linear-gradient(90deg,
+      #cf7897 0 12.5%,
+      #fff1d2 12.5% 25%,
+      #21b8b5 25% 37.5%,
+      #fff1d2 37.5% 50%,
+      #cf7897 50% 62.5%,
+      #fff1d2 62.5% 75%,
+      #21b8b5 75% 87.5%,
+      #fff1d2 87.5% 100%);
+  background-size: 72px 7px;
+}
+
+.visual-mini-label {
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .visual-frame {
+    border-radius: 20px;
+  }
+}
+</style>
+
+
+<style>
+.contact-sign {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 46px;
+  align-items: center;
+  padding: 44px 0 50px;
+  border-bottom: 1px solid rgba(207,120,151,.14);
+}
+
+.contact-sign-main {
+  position: relative;
+  padding: 32px 0 32px 30px;
+  border-left: 4px solid #cf7897;
+}
+
+.contact-sign-main small {
+  color: #dda0b6;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .15em;
+}
+
+.contact-sign-main strong {
+  display: block;
+  margin-top: 6px;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(56px, 8vw, 94px);
+  line-height: .88;
+}
+
+.contact-sign-main span {
+  display: block;
+  margin-top: 10px;
+  color: #f2c04b;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: .06em;
+}
+
+.contact-sign img {
+  width: 100%;
+  max-width: 230px;
+  justify-self: center;
+  filter: drop-shadow(0 18px 28px rgba(0,0,0,.25));
+}
+
+@media (max-width: 700px) {
+  .contact-sign {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-sign img {
+    max-width: 180px;
+    justify-self: start;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -245,15 +386,26 @@ body {
       <p>Kui sul on küsimus, koostööidee või tahad lihtsalt teada, kust Rex’si leida, oled õiges kohas.</p>
     </div>
 
+
+    <section class="contact-sign">
+      <div class="contact-sign-main">
+        <small>LEIA MEID TUFFIST</small>
+        <strong>3056</strong>
+        <span>SENORA WAY</span>
+      </div>
+
+      <img src="rex-badge.png" alt="Rex's Dineri logo">
+    </section>
+
+
     <section class="open-section contact-open-top">
       <div class="contact-open-col">
-        <p class="open-kicker">📍 LEIA MEID</p>
-        <h2>Senora Way, Tuff.</h2>
+        <p class="open-kicker">📍 KOHAPEAL</p>
+        <h2>Tule lihtsalt läbi.</h2>
         <p>
-          Tule kohapeale sööma, küsima või lihtsalt läbi astuma.
-          Rex’s Dineri leiad suunakoodilt:
+          Kui tahad menüü kohta küsida, midagi tellida või niisama läbi astuda,
+          oled alati oodatud.
         </p>
-        <span class="contact-code">3056</span>
       </div>
 
       <div class="contact-open-col">

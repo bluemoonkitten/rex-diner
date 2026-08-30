@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Eripakkumine | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=110">
+  <link rel="stylesheet" href="styles.css?v=150">
   
 <style>
 /* =========================================================
@@ -211,6 +211,104 @@ body {
 }
 </style>
 
+
+<style>
+/* =========================================================
+   REX'S VISUAL REFRESH
+   Silver-Diner-inspired principle:
+   large visuals + short copy + open sections
+   ========================================================= */
+
+.visual-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #0b2330;
+  border: 1px solid rgba(207,120,151,.18);
+}
+
+.visual-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.visual-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(4,16,25,.82);
+  backdrop-filter: blur(8px);
+  color: #fff1d2;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.retro-check-line {
+  height: 7px;
+  margin: 0;
+  border: 0;
+  opacity: .7;
+  background:
+    linear-gradient(90deg,
+      #cf7897 0 12.5%,
+      #fff1d2 12.5% 25%,
+      #21b8b5 25% 37.5%,
+      #fff1d2 37.5% 50%,
+      #cf7897 50% 62.5%,
+      #fff1d2 62.5% 75%,
+      #21b8b5 75% 87.5%,
+      #fff1d2 87.5% 100%);
+  background-size: 72px 7px;
+}
+
+.visual-mini-label {
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .visual-frame {
+    border-radius: 20px;
+  }
+}
+</style>
+
+
+<style>
+.offer-food-visual {
+  height: 330px;
+  margin: 40px 0 8px;
+}
+
+.offer-food-visual img {
+  object-position: center;
+}
+
+@media (max-width: 700px) {
+  .offer-food-visual {
+    height: 230px;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -241,6 +339,13 @@ body {
       <h1>Nädalapakkumine</h1>
       <p>Kolm Rex’s Dineri lemmikut ühe hinnaga — lihtne, kodune ja natuke magus.</p>
     </div>
+
+
+    <figure class="visual-frame offer-food-visual">
+      <img src="rex-food-strip.jpg" alt="Rex's Dineri retro toidu ja joogi illustratsioonid">
+      <figcaption class="visual-caption">This week at Rex’s</figcaption>
+    </figure>
+
 
     <section class="open-section offer-open">
       <div class="offer-open-copy">

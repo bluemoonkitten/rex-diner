@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Meist | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=110">
+  <link rel="stylesheet" href="styles.css?v=150">
   
 <style>
 /* =========================================================
@@ -219,6 +219,145 @@ body {
 }
 </style>
 
+
+<style>
+/* =========================================================
+   REX'S VISUAL REFRESH
+   Silver-Diner-inspired principle:
+   large visuals + short copy + open sections
+   ========================================================= */
+
+.visual-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  background: #0b2330;
+  border: 1px solid rgba(207,120,151,.18);
+}
+
+.visual-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.visual-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.025);
+}
+
+.visual-caption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(4,16,25,.82);
+  backdrop-filter: blur(8px);
+  color: #fff1d2;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.retro-check-line {
+  height: 7px;
+  margin: 0;
+  border: 0;
+  opacity: .7;
+  background:
+    linear-gradient(90deg,
+      #cf7897 0 12.5%,
+      #fff1d2 12.5% 25%,
+      #21b8b5 25% 37.5%,
+      #fff1d2 37.5% 50%,
+      #cf7897 50% 62.5%,
+      #fff1d2 62.5% 75%,
+      #21b8b5 75% 87.5%,
+      #fff1d2 87.5% 100%);
+  background-size: 72px 7px;
+}
+
+.visual-mini-label {
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .visual-frame {
+    border-radius: 20px;
+  }
+}
+</style>
+
+
+<style>
+.about-brand-visual {
+  display: grid;
+  grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+  gap: 52px;
+  align-items: center;
+  padding: 46px 0 54px;
+  border-bottom: 1px solid rgba(207,120,151,.14);
+}
+
+.about-badge-wrap {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.about-badge-wrap::before {
+  content: "";
+  position: absolute;
+  width: 330px;
+  height: 330px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(207,120,151,.15), transparent 68%);
+}
+
+.about-badge-wrap img {
+  position: relative;
+  z-index: 1;
+  width: min(340px, 88%);
+  filter: drop-shadow(0 24px 35px rgba(0,0,0,.28));
+}
+
+.about-brand-copy h2 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.5vw, 52px);
+  line-height: 1.02;
+}
+
+.about-brand-copy p {
+  max-width: 620px;
+  color: #aebfc6;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .about-brand-visual {
+    grid-template-columns: 1fr;
+  }
+
+  .about-badge-wrap {
+    min-height: 280px;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -249,6 +388,23 @@ body {
       <h1>Rex’s Diner</h1>
       <p>Uus nimi, tuttav hing ja natuke ajalugu igas ampsus.</p>
     </div>
+
+
+    <section class="about-brand-visual">
+      <div class="about-badge-wrap">
+        <img src="rex-badge.png" alt="Rex's Dineri dinosauruse logo">
+      </div>
+
+      <div class="about-brand-copy">
+        <p class="open-kicker">REX’S TÄNA</p>
+        <h2>Retro, aga päris oma moodi.</h2>
+        <p>
+          Rex’s kannab endas vana dineri tunnet, kuid uus nimi, uus kodu
+          ja dinosauruse maskott annavad sellele täiesti oma näo.
+        </p>
+      </div>
+    </section>
+
 
     <section class="open-section about-story-open">
       <div>
