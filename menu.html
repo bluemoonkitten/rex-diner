@@ -5,902 +5,293 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Menüü | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=81">
-
-<style>
-/* MENÜÜ KAARDID – inline, et GitHub/browser cache ei saaks seda ära kaotada */
-
-.menu-page {
-  max-width: 1240px !important;
-}
-
-.menu-category {
-  display: block !important;
-  margin-top: 28px !important;
-  padding: 26px !important;
-  background: #0b2330 !important;
-  border: 1px solid rgba(142,189,199,.18) !important;
-  border-radius: 30px !important;
-  box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
-}
-
-.menu-category-heading {
-  display: flex !important;
-  align-items: center !important;
-  gap: 16px !important;
-  margin-bottom: 22px !important;
-}
-
-.menu-category-heading h2 {
-  margin: 0 !important;
-  color: #fff1d2 !important;
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: clamp(30px, 4vw, 42px) !important;
-  line-height: 1 !important;
-}
-
-.category-icon {
-  display: grid !important;
-  place-items: center !important;
-  width: 58px !important;
-  height: 58px !important;
-  flex: 0 0 58px !important;
-  border-radius: 18px !important;
-  background: rgba(33,184,181,.12) !important;
-  border: 1px solid rgba(121,216,213,.2) !important;
-  font-size: 29px !important;
-}
-
-.item-card-grid,
-.compact-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: 16px !important;
-  width: 100% !important;
-}
-
-.item-card {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  min-width: 0 !important;
-  min-height: 155px !important;
-  padding: 20px !important;
-  position: relative !important;
-  overflow: hidden !important;
-  background:
-    radial-gradient(circle at 100% 0%, rgba(33,184,181,.10), transparent 9rem),
-    #103343 !important;
-  border: 1px solid rgba(121,216,213,.15) !important;
-  border-radius: 21px !important;
-  box-shadow: 0 9px 20px rgba(0,0,0,.15) !important;
-}
-
-.item-card::after {
-  content: "" !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  height: 3px !important;
-  background: linear-gradient(90deg, #21b8b5, #dda0b6, #f2c04b) !important;
-}
-
-.item-card-icon {
-  display: block !important;
-  margin-bottom: 13px !important;
-  font-size: 28px !important;
-  line-height: 1 !important;
-}
-
-.item-card h3 {
-  display: block !important;
-  margin: 0 0 18px !important;
-  color: #f4f5ed !important;
-  font-size: 17px !important;
-  line-height: 1.35 !important;
-}
-
-.item-card-price {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-top: auto !important;
-  min-width: 68px !important;
-  padding: 6px 11px !important;
-  border-radius: 999px !important;
-  color: #221902 !important;
-  background: #f2c04b !important;
-  font-weight: 900 !important;
-  font-size: 13px !important;
-  white-space: nowrap !important;
-}
-
-.combo-card-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 16px !important;
-  width: 100% !important;
-}
-
-.combo-card {
-  display: block !important;
-  position: relative !important;
-  padding: 21px !important;
-  background:
-    linear-gradient(145deg, rgba(207,120,151,.08), transparent),
-    #103343 !important;
-  border: 1px solid rgba(207,120,151,.18) !important;
-  border-radius: 22px !important;
-  box-shadow: 0 9px 20px rgba(0,0,0,.15) !important;
-}
-
-.combo-card-top {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 12px !important;
-  margin-bottom: 12px !important;
-}
-
-.combo-card h3 {
-  margin: 0 0 12px !important;
-  color: #fff1d2 !important;
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 22px !important;
-}
-
-.combo-card p {
-  margin: 5px 0 !important;
-  color: #aebfc6 !important;
-  font-size: 13px !important;
-}
-
-.combo-star {
-  color: #f2c04b !important;
-  font-size: 23px !important;
-}
-
-.bar-category-block {
-  display: block !important;
-  margin-top: 22px !important;
-}
-
-.bar-section-title {
-  margin: 0 0 11px !important;
-  color: #79d8d5 !important;
-  font-size: 15px !important;
-  text-transform: uppercase !important;
-  letter-spacing: .08em !important;
-}
-
-.bar-item {
-  min-height: 125px !important;
-}
-
-@media (max-width: 980px) {
-  .item-card-grid,
-  .compact-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
-  }
-}
-
-@media (max-width: 680px) {
-  .menu-category {
-    padding: 19px !important;
-    border-radius: 24px !important;
-  }
-
-  .item-card-grid,
-  .compact-grid,
-  .combo-card-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .item-card {
-    min-height: 130px !important;
-  }
-
-  .menu-category-heading {
-    align-items: flex-start !important;
-  }
-}
-</style>
-
-
-<style>
-/* Menüü kiirnupud ja infoplokk */
-
-.menu-quick-info {
-  margin: 0 0 28px;
-  padding: 20px 22px;
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.08), rgba(33,184,181,.05)),
-    #0b2330;
-  border: 1px solid rgba(142,189,199,.18);
-  border-radius: 22px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.14);
-}
-
-.menu-quick-info p {
-  margin: 0 0 14px;
-  color: #aebfc6;
-  font-size: 14px;
-}
-
-.menu-quick-info p a {
-  color: #dda0b6;
-  font-weight: 900;
-}
-
-.menu-quick-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.menu-quick-nav a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 38px;
-  padding: 8px 13px;
-  border-radius: 999px;
-  color: #f8edf1;
-  background: rgba(207,120,151,.12);
-  border: 1px solid rgba(207,120,151,.19);
-  font-size: 12px;
-  font-weight: 900;
-  transition: transform .16s ease, background .16s ease;
-}
-
-.menu-quick-nav a:hover {
-  transform: translateY(-2px);
-  background: rgba(207,120,151,.20);
-}
-
-.combo-note {
-  margin: -5px 0 18px;
-  color: #aebfc6;
-  font-size: 13px;
-  font-style: italic;
-}
-
-.menu-category {
-  scroll-margin-top: 105px;
-}
-
-@media (max-width: 680px) {
-  .menu-quick-info {
-    padding: 18px;
-  }
-
-  .menu-quick-nav a {
-    flex: 1 1 calc(50% - 9px);
-  }
-}
-
-@media (max-width: 420px) {
-  .menu-quick-nav a {
-    flex-basis: 100%;
-  }
-}
-</style>
-
-
-<style>
-/* Tagasi algusesse nupp */
-
-.back-to-top {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 40;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 46px;
-  padding: 10px 15px;
-  border-radius: 999px;
-  color: #fff6fa;
-  background: #a95774;
-  border: 1px solid rgba(255,255,255,.12);
-  box-shadow: 0 10px 26px rgba(0,0,0,.28);
-  font-size: 13px;
-  font-weight: 900;
-  transition: transform .16s ease, background .16s ease;
-}
-
-.back-to-top:hover {
-  transform: translateY(-3px);
-  background: #dda0b6;
-}
-
-.back-to-top span {
-  font-size: 18px;
-  line-height: 1;
-}
-
-.back-to-top strong {
-  font-size: 12px;
-}
-
-@media (max-width: 680px) {
-  .back-to-top {
-    right: 16px;
-    bottom: 16px;
-    width: 46px;
-    height: 46px;
-    min-height: 46px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .back-to-top strong {
-    display: none;
-  }
-}
-</style>
-
-
+  <link rel="stylesheet" href="styles.css?v=110">
+  
 <style>
 /* =========================================================
-   MENÜÜ STICKY KATEGOORIARIBA
-   ========================================================= */
-
-.menu-scroll-layout {
-  display: grid;
-  grid-template-columns: 185px minmax(0, 1fr);
-  gap: 22px;
-  align-items: start;
-}
-
-.menu-side-nav {
-  position: sticky;
-  top: 104px;
-  z-index: 25;
-}
-
-.menu-side-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  padding: 16px;
-  background:
-    linear-gradient(145deg, rgba(207,120,151,.07), rgba(33,184,181,.035)),
-    #0b2330;
-  border: 1px solid rgba(142,189,199,.18);
-  border-radius: 22px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.18);
-}
-
-.menu-side-label {
-  padding: 4px 8px 8px;
-  color: #79d8d5;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: .18em;
-}
-
-.menu-side-link {
-  display: flex;
-  align-items: center;
-  min-height: 42px;
-  padding: 9px 11px;
-  border-radius: 13px;
-  color: #dce8e8;
-  border: 1px solid transparent;
-  font-size: 12px;
-  font-weight: 900;
-  transition:
-    background .16s ease,
-    color .16s ease,
-    border-color .16s ease,
-    transform .16s ease;
-}
-
-.menu-side-link:hover {
-  transform: translateX(2px);
-  color: #fff8ed;
-  background: rgba(207,120,151,.11);
-  border-color: rgba(207,120,151,.16);
-}
-
-.menu-side-link.active {
-  color: #1d1420;
-  background: #dda0b6;
-  border-color: rgba(255,255,255,.14);
-  box-shadow: 0 7px 16px rgba(0,0,0,.18);
-}
-
-.menu-top-link {
-  margin-bottom: 4px;
-  color: #f2c04b;
-  background: rgba(242,192,75,.07);
-  border-color: rgba(242,192,75,.12);
-}
-
-.menu-top-link:hover {
-  color: #241a04;
-  background: #f2c04b;
-  border-color: #f2c04b;
-}
-
-.menu-scroll-content {
-  min-width: 0;
-}
-
-.menu-price-note {
-  margin-bottom: 24px;
-  padding: 17px 20px;
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.07), rgba(33,184,181,.045)),
-    #0b2330;
-  border: 1px solid rgba(142,189,199,.18);
-  border-radius: 19px;
-}
-
-.menu-price-note p {
-  margin: 0;
-  color: #aebfc6;
-  font-size: 13px;
-}
-
-.menu-price-note a {
-  color: #dda0b6;
-  font-weight: 900;
-}
-
-.menu-category {
-  scroll-margin-top: 104px !important;
-}
-
-/* Tablet ja telefon: kategooriariba muutub horisontaalseks */
-@media (max-width: 900px) {
-  .menu-scroll-layout {
-    display: block;
-  }
-
-  .menu-side-nav {
-    top: 72px;
-    margin: 0 -2px 22px;
-    background: rgba(6,21,31,.94);
-    backdrop-filter: blur(14px);
-  }
-
-  .menu-side-inner {
-    flex-direction: row;
-    align-items: center;
-    gap: 7px;
-    padding: 10px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scrollbar-width: thin;
-    border-radius: 18px;
-  }
-
-  .menu-side-label {
-    display: none;
-  }
-
-  .menu-side-link {
-    flex: 0 0 auto;
-    min-height: 38px;
-    padding: 8px 12px;
-    white-space: nowrap;
-    border-radius: 999px;
-  }
-
-  .menu-side-link:hover {
-    transform: translateY(-1px);
-  }
-
-  .menu-top-link {
-    margin-bottom: 0;
-  }
-
-  .menu-category {
-    scroll-margin-top: 135px !important;
-  }
-}
-
-@media (max-width: 520px) {
-  .menu-side-inner {
-    margin-left: -4px;
-    margin-right: -4px;
-  }
-
-  .menu-side-link {
-    font-size: 11px;
-  }
-}
-</style>
-
-
-<style>
-/* =========================================================
-   STICKY MENÜÜRIBA – PÄRISELT KÕRVAL, MITTE SISU PEAL
-   ========================================================= */
-
-/* Laiem konteiner ainult menüüle, et vasak külgriba ei võtaks kaartidelt ruumi */
-.menu-page {
-  max-width: 1450px !important;
-}
-
-/* Külgriba + menüü sisu on kaks päris eraldi veergu */
-.menu-scroll-layout {
-  display: grid !important;
-  grid-template-columns: 165px minmax(0, 1180px) !important;
-  gap: 24px !important;
-  align-items: start !important;
-  justify-content: center !important;
-}
-
-/* Külgriba ei asu menüü sisu kohal */
-.menu-side-nav {
-  position: sticky !important;
-  top: 104px !important;
-  width: 165px !important;
-  min-width: 165px !important;
-  z-index: 20 !important;
-  align-self: start !important;
-}
-
-.menu-side-inner {
-  width: 100% !important;
-}
-
-/* Menüü sisu jääb alati oma veergu */
-.menu-scroll-content {
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: 1180px !important;
-}
-
-/* Veidi rohkem ruumi kaartidele */
-.menu-scroll-content .menu-category {
-  width: 100% !important;
-}
-
-/* Kui ekraan hakkab kitsaks jääma, viime riba üles enne,
-   kui see saab menüü kaartidele liiga lähedale minna */
-@media (max-width: 1180px) {
-  .menu-page {
-    max-width: 1180px !important;
-  }
-
-  .menu-scroll-layout {
-    display: block !important;
-  }
-
-  .menu-side-nav {
-    position: sticky !important;
-    top: 72px !important;
-    width: auto !important;
-    min-width: 0 !important;
-    margin: 0 0 22px !important;
-    z-index: 30 !important;
-  }
-
-  .menu-side-inner {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 7px !important;
-    overflow-x: auto !important;
-    padding: 10px !important;
-    white-space: nowrap !important;
-  }
-
-  .menu-side-label {
-    display: none !important;
-  }
-
-  .menu-side-link {
-    flex: 0 0 auto !important;
-    min-height: 38px !important;
-    padding: 8px 12px !important;
-    border-radius: 999px !important;
-  }
-
-  .menu-scroll-content {
-    max-width: none !important;
-  }
-
-  .menu-category {
-    scroll-margin-top: 140px !important;
-  }
-}
-</style>
-
-
-<style>
-/* =========================================================
-   LÕPLIK PARANDUS: MENÜÜRIBA PÄRISELT VASAKUS SERVAS
-   ========================================================= */
-
-@media (min-width: 1281px) {
-  .menu-page {
-    max-width: 1180px !important;
-    position: relative !important;
-  }
-
-  .menu-scroll-layout {
-    display: block !important;
-  }
-
-  .menu-scroll-content {
-    width: 100% !important;
-    max-width: 1180px !important;
-  }
-
-  .menu-side-nav {
-    position: fixed !important;
-    top: 118px !important;
-    left: max(18px, calc(50vw - 760px)) !important;
-    width: 170px !important;
-    min-width: 170px !important;
-    z-index: 25 !important;
-  }
-
-  .menu-side-inner {
-    width: 170px !important;
-  }
-}
-
-/* Keskmisel ja väiksel ekraanil jääb riba turvaliselt üles */
-@media (max-width: 1280px) {
-  .menu-scroll-layout {
-    display: block !important;
-  }
-
-  .menu-side-nav {
-    position: sticky !important;
-    top: 72px !important;
-    width: auto !important;
-    min-width: 0 !important;
-    margin: 0 0 22px !important;
-    z-index: 30 !important;
-  }
-
-  .menu-side-inner {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 7px !important;
-    overflow-x: auto !important;
-    padding: 10px !important;
-    white-space: nowrap !important;
-  }
-
-  .menu-side-label {
-    display: none !important;
-  }
-
-  .menu-side-link {
-    flex: 0 0 auto !important;
-    min-height: 38px !important;
-    padding: 8px 12px !important;
-    border-radius: 999px !important;
-  }
-
-  .menu-scroll-content {
-    max-width: none !important;
-  }
-}
-</style>
-
-
-<style>
-/* =========================================================
-   REX'S – NAVY + ROOSA TASAKAAL
-   Navy jääb põhitooniks, dusty rose on nüüd nähtavam aktsent.
+   REX'S OPEN STYLE – VÄHEM KASTE, ROHKEM ÕHKU
    ========================================================= */
 
 body {
   background:
-    radial-gradient(circle at 92% 7%, rgba(207,120,151,.105), transparent 28rem),
-    radial-gradient(circle at 4% 52%, rgba(207,120,151,.055), transparent 25rem),
-    radial-gradient(circle at 78% 92%, rgba(33,184,181,.05), transparent 25rem),
-    #041019 !important;
+    radial-gradient(circle at 92% 8%, rgba(207,120,151,.11), transparent 27rem),
+    radial-gradient(circle at 6% 58%, rgba(33,184,181,.045), transparent 24rem),
+    #041019;
 }
 
-.site-header {
-  border-bottom-color: rgba(207,120,151,.22) !important;
-  box-shadow: 0 8px 30px rgba(0,0,0,.22);
+.open-page {
+  max-width: 1180px;
 }
 
-.site-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent 3%,
-    rgba(207,120,151,.72) 26%,
-    rgba(33,184,181,.48) 62%,
-    transparent 97%);
-  pointer-events: none;
+.open-title {
+  padding: 38px 0 34px;
+  border-bottom: 1px solid rgba(207,120,151,.16);
 }
 
-.eyebrow {
-  color: #e1a2b8 !important;
+.open-title .eyebrow {
+  margin: 0 0 10px;
+  color: #e1a2b8;
 }
 
-.page-title::after {
-  width: 96px !important;
-  height: 4px !important;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8, #21b8b5) !important;
+.open-title h1 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6vw, 72px);
+  line-height: .96;
+  letter-spacing: -.03em;
 }
 
-.main-nav a.active:not(.nav-cta) {
-  color: #fff4f7 !important;
-  background: rgba(207,120,151,.13) !important;
-  border-color: rgba(207,120,151,.22) !important;
+.open-title > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #aebfc6;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
-.main-nav .nav-cta,
-.btn-primary {
-  background: #a95774 !important;
+.open-section {
+  padding: 54px 0;
+  border-bottom: 1px solid rgba(207,120,151,.14);
 }
 
-.main-nav .nav-cta:hover,
-.btn-primary:hover {
-  background: #cf7897 !important;
+.open-section:last-child {
+  border-bottom: 0;
 }
 
-/* Tavalised sisukaardid saavad nähtava, aga rahuliku roosa kuma */
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.quick-info-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.apply-choice,
-.after-apply,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note,
-.management-card,
-.reason-item,
-.menu-price-note {
-  border-color: rgba(207,120,151,.20) !important;
+.open-kicker {
+  margin: 0 0 10px;
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
 
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note {
-  background:
-    radial-gradient(circle at 96% 3%, rgba(207,120,151,.105), transparent 13rem),
-    linear-gradient(145deg, rgba(207,120,151,.025), rgba(255,255,255,0) 52%),
-    #0b2330 !important;
+.open-section h2 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.03;
 }
 
-.quick-info-card,
-.management-card,
-.reason-item,
-.job-task,
-.apply-choice {
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.055), rgba(16,51,67,0) 58%),
-    #103343 !important;
+.open-section p {
+  color: #aebfc6;
+  line-height: 1.65;
 }
 
-.card,
-.home-story-card,
-.home-location-card,
-.jobs-info-card,
-.contact-big-card,
-.contact-management,
-.contact-reasons {
-  position: relative;
-  overflow: hidden;
+.open-link {
+  display: inline-block;
+  color: #dda0b6;
+  font-size: 12px;
+  font-weight: 900;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(207,120,151,.48);
 }
 
-.card::after,
-.home-story-card::after,
-.home-location-card::after,
-.jobs-info-card::after,
-.contact-big-card::after,
-.contact-management::after,
-.contact-reasons::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  right: auto;
-  top: 0;
-  width: 72px;
-  height: 3px;
-  border-radius: 0 0 999px 999px;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8);
-  opacity: .88;
-  pointer-events: none;
+.open-link:hover {
+  color: #fff1d2;
 }
 
-.stat {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(207,120,151,.10), transparent 7rem),
-    #103343 !important;
-  border-color: rgba(207,120,151,.18) !important;
+.open-rule {
+  border: 0;
+  border-top: 1px solid rgba(207,120,151,.14);
+  margin: 28px 0;
 }
 
-.stat strong,
-.quick-info-card strong {
-  color: #fff0e1 !important;
-}
-
-.site-footer {
-  border-top-color: rgba(207,120,151,.20) !important;
+.open-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(207,120,151,.09);
+  color: #efdbe2;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 @media (max-width: 760px) {
-  body {
-    background:
-      radial-gradient(circle at 95% 6%, rgba(207,120,151,.08), transparent 18rem),
-      #041019 !important;
+  .open-title {
+    padding-top: 28px;
+  }
+
+  .open-section {
+    padding: 42px 0;
   }
 }
 </style>
 
-
+  
 <style>
-/* Menüü: roosa on nähtavam kaartidel ja kategooriates */
-.item-card,
-.combo-card,
-.bar-category-block {
-  background:
-    radial-gradient(circle at 98% 2%, rgba(207,120,151,.095), transparent 9rem),
-    #0b2330 !important;
-  border-color: rgba(207,120,151,.20) !important;
+.menu-open-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 42px;
+  align-items: start;
+  padding-top: 38px;
 }
 
-.item-card:hover,
-.combo-card:hover {
-  border-color: rgba(207,120,151,.42) !important;
+.menu-open-nav {
+  position: sticky;
+  top: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-left: 16px;
+  border-left: 2px solid rgba(207,120,151,.32);
 }
 
-.menu-category-heading {
-  border-bottom-color: rgba(207,120,151,.20) !important;
+.menu-open-nav a {
+  color: #9eb3bb;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 7px 0;
 }
 
-.menu-category-heading::after {
-  content: "";
+.menu-open-nav a:hover {
+  color: #dda0b6;
+}
+
+.menu-open-content {
+  min-width: 0;
+}
+
+.menu-note {
+  margin: 0 0 26px;
+  color: #91a8b0;
+  font-size: 12px;
+}
+
+.menu-note a {
+  color: #dda0b6;
+}
+
+.menu-open-section {
+  padding: 0 0 42px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid rgba(207,120,151,.14);
+  scroll-margin-top: 110px;
+}
+
+.menu-open-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.menu-open-heading > span {
+  font-size: 26px;
+}
+
+.menu-open-heading h2 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+}
+
+.menu-open-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 38px;
+}
+
+.menu-open-row,
+.bar-open-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(207,120,151,.09);
+}
+
+.menu-open-name,
+.bar-open-row span {
+  color: #e7eeee;
+  font-weight: 800;
+}
+
+.menu-open-price,
+.bar-open-row b {
+  color: #f2c04b;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.combo-open-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(207,120,151,.10);
+}
+
+.combo-open-row strong {
   display: block;
-  width: 58px;
-  height: 3px;
-  margin-top: 10px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8);
+  color: #fff1d2;
+  font-size: 16px;
 }
 
-.item-card-icon {
-  background: rgba(207,120,151,.13) !important;
-  border-color: rgba(207,120,151,.20) !important;
+.combo-open-row span {
+  display: block;
+  margin-top: 5px;
+  color: #90a8b0;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
-.menu-side-inner {
-  background:
-    radial-gradient(circle at 100% 0%, rgba(207,120,151,.11), transparent 9rem),
-    #0b2330 !important;
-  border-color: rgba(207,120,151,.22) !important;
+.combo-open-row b {
+  color: #f2c04b;
+  align-self: start;
 }
 
-.menu-side-link.active {
-  background: #e1a2b8 !important;
+.bar-open-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 44px;
+}
+
+.bar-open-group h3 {
+  margin: 0 0 6px;
+  color: #dda0b6;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .menu-open-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .menu-open-nav {
+    position: sticky;
+    top: 72px;
+    z-index: 20;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px 0;
+    border-left: 0;
+    border-bottom: 1px solid rgba(207,120,151,.18);
+    background: rgba(4,16,25,.94);
+    backdrop-filter: blur(12px);
+  }
+
+  .menu-open-nav a {
+    flex: 0 0 auto;
+    padding: 7px 10px;
+    white-space: nowrap;
+  }
+
+  .menu-open-list,
+  .bar-open-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
@@ -925,347 +316,215 @@ body {
   </nav>
 </header>
 
-<main class="page">
-  <div class="page-wrap menu-page" id="menu-top">
 
-    <div class="page-title">
-      <p class="eyebrow">REX'S DINER</p>
+<main class="page">
+  <div class="page-wrap open-page" id="menu-top">
+
+    <div class="open-title">
+      <p class="eyebrow">REX’S DINERI MENÜÜ</p>
       <h1>Menüü</h1>
-      <p>Vali oma lemmik — iga toit, jook ja maius on nüüd jälle eraldi kaardil.</p>
+      <p>Kodune toit, joogid, magusad ampsud ja baar — kõik ühes lihtsas menüüs.</p>
     </div>
 
-    
-    <div class="menu-scroll-layout">
-
-      <aside class="menu-side-nav" aria-label="Menüü kategooriad">
-        <div class="menu-side-inner">
-          <span class="menu-side-label">MENÜÜ</span>
-          <a class="menu-side-link menu-top-link" href="#menu-top">↑ Algusesse</a>
-          <a class="menu-side-link active" href="#toidud" data-menu-target="toidud">🍲 Toidud</a>
-          <a class="menu-side-link" href="#joogid" data-menu-target="joogid">🥤 Joogid</a>
-          <a class="menu-side-link" href="#snakid" data-menu-target="snakid">🥨 Snäkid</a>
-          <a class="menu-side-link" href="#magusad" data-menu-target="magusad">🍰 Magusad</a>
-          <a class="menu-side-link" href="#kombod" data-menu-target="kombod">⭐ Kombod</a>
-          <a class="menu-side-link" href="#baar" data-menu-target="baar">🍸 Baar</a>
-        </div>
+    <div class="menu-open-layout">
+      <aside class="menu-open-nav">
+        <a href="#menu-top">↑ Algusesse</a>
+        <a href="#toidud">Toidud</a>
+        <a href="#joogid">Joogid</a>
+        <a href="#snakid">Snäkid</a>
+        <a href="#magusad">Magusad</a>
+        <a href="#kombod">Kombod</a>
+        <a href="#baar">Baar</a>
       </aside>
 
-      <div class="menu-scroll-content">
+      <div class="menu-open-content">
+        <p class="menu-note">
+          Kõik hinnad on Rex’s Dineri tavahinnad. Nädala- ja eripakkumised leiad
+          <a href="eripakkumine.html">Eripakkumise lehelt</a>.
+        </p>
 
-        <section class="menu-price-note">
-          <p>
-            Kõik siin lehel olevad hinnad on Rex’s Dineri tavahinnad.
-            Jooksvad nädala- ja eripakkumised leiad
-            <a href="eripakkumine.html">Eripakkumise lehelt</a>.
-          </p>
-        </section>
-
-<section class="menu-category" id="toidud">
-      <div class="menu-category-heading">
-        <span class="category-icon">🍲</span>
-        <div>
-          <p class="eyebrow">KODUSED LEMMIKUD</p>
+        
+      <section class="menu-open-section" id="toidud">
+        <div class="menu-open-heading">
+          <span>🍲</span>
           <h2>Toidud</h2>
         </div>
-      </div>
-
-      <div class="item-card-grid">
-        <article class="item-card">
-          <div class="item-card-icon">🍲</div>
-          <h3>Casey lihapada</h3>
-          <span class="item-card-price">$950</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🥔</div>
-          <h3>Kartuli-Peekoni Panniroog</h3>
-          <span class="item-card-price">$800</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍚</div>
-          <h3>Kodune kana-riisikauss</h3>
-          <span class="item-card-price">$890</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🥘</div>
-          <h3>Hakklihakaste kartuliga</h3>
-          <span class="item-card-price">$745</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍝</div>
-          <h3>Kodune makaroniroog</h3>
-          <span class="item-card-price">$750</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🥣</div>
-          <h3>Rexi kanasupp</h3>
-          <span class="item-card-price">$720</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-category" id="snakid">
-      <div class="menu-category-heading">
-        <span class="category-icon">🥨</span>
-        <div>
-          <p class="eyebrow">MIDAGI KÕRVALE</p>
-          <h2>Snäkid</h2>
+        <div class="menu-open-list"><div class="menu-open-row">
+          <span class="menu-open-name">Casey lihapada</span>
+          <span class="menu-open-price">$950</span>
         </div>
-      </div>
-
-      <div class="item-card-grid compact-grid">
-        <article class="item-card">
-          <div class="item-card-icon">🥖</div>
-          <h3>Küüslauguleivad</h3>
-          <span class="item-card-price">$600</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🧀</div>
-          <h3>Juustused küüslauguleivad</h3>
-          <span class="item-card-price">$700</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🥨</div>
-          <h3>Rexi snäkitaldrik</h3>
-          <span class="item-card-price">$850</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-category" id="magusad">
-      <div class="menu-category-heading">
-        <span class="category-icon">🍰</span>
-        <div>
-          <p class="eyebrow">MAGUS PAUS</p>
-          <h2>Magusad ampsud</h2>
+<div class="menu-open-row">
+          <span class="menu-open-name">Kartuli-Peekoni Panniroog</span>
+          <span class="menu-open-price">$800</span>
         </div>
-      </div>
-
-      <div class="item-card-grid">
-        <article class="item-card">
-          <div class="item-card-icon">🥞</div>
-          <h3>Rexi pannkoogid</h3>
-          <span class="item-card-price">$680</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍨</div>
-          <h3>Šokolaadi-jäätise tops</h3>
-          <span class="item-card-price">$715</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍰</div>
-          <h3>Casey tiramisu</h3>
-          <span class="item-card-price">$850</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍑</div>
-          <h3>Ploomi-kooretops</h3>
-          <span class="item-card-price">$700</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-category" id="joogid">
-      <div class="menu-category-heading">
-        <span class="category-icon">🥤</span>
-        <div>
-          <p class="eyebrow">KÜLMAD & SOOJAD</p>
+<div class="menu-open-row">
+          <span class="menu-open-name">Kodune kana-riisikauss</span>
+          <span class="menu-open-price">$890</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Hakklihakaste kartuliga</span>
+          <span class="menu-open-price">$745</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Kodune makaroniroog</span>
+          <span class="menu-open-price">$750</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Rexi kanasupp</span>
+          <span class="menu-open-price">$720</span>
+        </div></div>
+      </section>
+    
+      <section class="menu-open-section" id="joogid">
+        <div class="menu-open-heading">
+          <span>🥤</span>
           <h2>Joogid</h2>
         </div>
-      </div>
-
-      <div class="item-card-grid">
-        <article class="item-card">
-          <div class="item-card-icon">🍋</div>
-          <h3>Kodune limonaad</h3>
-          <span class="item-card-price">$715</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🍵</div>
-          <h3>Münditee sidruniga</h3>
-          <span class="item-card-price">$730</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">☕</div>
-          <h3>Piparmündi kakao</h3>
-          <span class="item-card-price">$770</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">☕</div>
-          <h3>Mocha</h3>
-          <span class="item-card-price">$845</span>
-        </article>
-
-        <article class="item-card">
-          <div class="item-card-icon">🥤</div>
-          <h3>Kirsi piimakokteil</h3>
-          <span class="item-card-price">$875</span>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-category combo-category" id="kombod">
-      <div class="menu-category-heading">
-        <span class="category-icon">⭐</span>
-        <div>
-          <p class="eyebrow">ROHKEM ÜHES</p>
-          <h2>Kombod</h2>
+        <div class="menu-open-list"><div class="menu-open-row">
+          <span class="menu-open-name">Kodune limonaad</span>
+          <span class="menu-open-price">$715</span>
         </div>
-      </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Münditee sidruniga</span>
+          <span class="menu-open-price">$730</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Piparmündi kakao</span>
+          <span class="menu-open-price">$770</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Mocha</span>
+          <span class="menu-open-price">$845</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Kirsi piimakokteil</span>
+          <span class="menu-open-price">$875</span>
+        </div></div>
+      </section>
+    
+      <section class="menu-open-section" id="snakid">
+        <div class="menu-open-heading">
+          <span>🥨</span>
+          <h2>Snäkid</h2>
+        </div>
+        <div class="menu-open-list"><div class="menu-open-row">
+          <span class="menu-open-name">Küüslauguleivad</span>
+          <span class="menu-open-price">$600</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Juustused küüslauguleivad</span>
+          <span class="menu-open-price">$700</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Rexi snäkitaldrik</span>
+          <span class="menu-open-price">$850</span>
+        </div></div>
+      </section>
+    
+      <section class="menu-open-section" id="magusad">
+        <div class="menu-open-heading">
+          <span>🍰</span>
+          <h2>Magusad ampsud</h2>
+        </div>
+        <div class="menu-open-list"><div class="menu-open-row">
+          <span class="menu-open-name">Rexi pannkoogid</span>
+          <span class="menu-open-price">$680</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Šokolaadi-jäätise tops</span>
+          <span class="menu-open-price">$715</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Casey tiramisu</span>
+          <span class="menu-open-price">$850</span>
+        </div>
+<div class="menu-open-row">
+          <span class="menu-open-name">Ploomi-kooretops</span>
+          <span class="menu-open-price">$700</span>
+        </div></div>
+      </section>
+    
 
-
-      <p class="combo-note">
-        Kombod sisaldavad mitut toodet ühe hinnaga.
-      </p>
-
-      <div class="combo-card-grid">
-        <article class="combo-card">
-          <div class="combo-card-top">
-            <span class="combo-star">★</span>
-            <span class="item-card-price">$2145</span>
+        <section class="menu-open-section" id="kombod">
+          <div class="menu-open-heading">
+            <span>⭐</span>
+            <h2>Kombod</h2>
           </div>
-          <h3>Kaevuri Energiaeine</h3>
-          <p>Kodune kana-riisikauss</p>
-          <p>Mocha</p>
-          <p>Šokolaadi-jäätise tops</p>
-        </article>
+          <div><div class="combo-open-row">
+      <div>
+        <strong>Kaevuri Energiaeine</strong>
+        <span>Kodune kana-riisikauss + Mocha + Šokolaadi-jäätise tops</span>
+      </div>
+      <b>$2145</b>
+    </div>
+<div class="combo-open-row">
+      <div>
+        <strong>Casey Kodune Kombo</strong>
+        <span>Casey lihapada + Kodune limonaad + Casey tiramisu</span>
+      </div>
+      <b>$2295</b>
+    </div>
+<div class="combo-open-row">
+      <div>
+        <strong>Julm Special</strong>
+        <span>Hakklihakaste kartuliga + Casey tiramisu + Piparmündi kakao</span>
+      </div>
+      <b>$2095</b>
+    </div>
+<div class="combo-open-row">
+      <div>
+        <strong>Emilio Special</strong>
+        <span>Rexi kanasupp + Rexi pannkoogid + Münditee sidruniga + Väike Rex</span>
+      </div>
+      <b>$2295</b>
+    </div></div>
+        </section>
 
-        <article class="combo-card">
-          <div class="combo-card-top">
-            <span class="combo-star">★</span>
-            <span class="item-card-price">$2295</span>
+        <section class="menu-open-section" id="baar">
+          <div class="menu-open-heading">
+            <span>🍸</span>
+            <h2>Baar</h2>
           </div>
-          <h3>Casey Kodune Kombo</h3>
-          <p>Casey lihapada</p>
-          <p>Kodune limonaad</p>
-          <p>Casey tiramisu</p>
-        </article>
-
-        <article class="combo-card">
-          <div class="combo-card-top">
-            <span class="combo-star">★</span>
-            <span class="item-card-price">$2095</span>
+          <div class="bar-open-grid">
+            
+      <div class="bar-open-group">
+        <h3>Õlled</h3>
+        <div class="bar-open-row"><span>Rexi Kuldne Lager</span><b>$815</b></div>
+<div class="bar-open-row"><span>Raptori Time Ale</span><b>$845</b></div>
+      </div>
+    
+      <div class="bar-open-group">
+        <h3>Siidrid</h3>
+        <div class="bar-open-row"><span>Rexi Õunasiider</span><b>$795</b></div>
+<div class="bar-open-row"><span>Kirsi-Rex Siider</span><b>$825</b></div>
+      </div>
+    
+      <div class="bar-open-group">
+        <h3>Veinid</h3>
+        <div class="bar-open-row"><span>Rexi Punane Vein</span><b>$895</b></div>
+<div class="bar-open-row"><span>Jurassic Roosa Vein</span><b>$905</b></div>
+      </div>
+    
+      <div class="bar-open-group">
+        <h3>Kokteilid</h3>
+        <div class="bar-open-row"><span>Rexi Tropical</span><b>$925</b></div>
+<div class="bar-open-row"><span>Rexi Punane Sangria</span><b>$945</b></div>
+      </div>
+    
+      <div class="bar-open-group">
+        <h3>Mokteilid</h3>
+        <div class="bar-open-row"><span>Väike Rex</span><b>$785</b></div>
+<div class="bar-open-row"><span>Roosa Fossiil</span><b>$805</b></div>
+      </div>
+    
           </div>
-          <h3>Julm Special</h3>
-          <p>Hakklihakaste kartuliga</p>
-          <p>Casey tiramisu</p>
-          <p>Piparmündi kakao</p>
-        </article>
-
-        <article class="combo-card">
-          <div class="combo-card-top">
-            <span class="combo-star">★</span>
-            <span class="item-card-price">$2295</span>
-          </div>
-          <h3>Emilio Special</h3>
-          <p>Rexi kanasupp</p>
-          <p>Rexi pannkoogid</p>
-          <p>Münditee sidruniga</p>
-          <p>Väike Rex</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="menu-category" id="baar">
-      <div class="menu-category-heading">
-        <span class="category-icon">🍸</span>
-        <div>
-          <p class="eyebrow">REX'S BAR</p>
-          <h2>Baarijoogid</h2>
-        </div>
-      </div>
-
-      <div class="bar-category-block">
-        <h3 class="bar-section-title">🍺 Õlled</h3>
-        <div class="item-card-grid compact-grid">
-          <article class="item-card bar-item">
-            <h3>Rexi Kuldne Lager</h3>
-            <span class="item-card-price">$815</span>
-          </article>
-          <article class="item-card bar-item">
-            <h3>Raptori Time Ale</h3>
-            <span class="item-card-price">$845</span>
-          </article>
-        </div>
-      </div>
-
-      <div class="bar-category-block">
-        <h3 class="bar-section-title">🍎 Siidrid</h3>
-        <div class="item-card-grid compact-grid">
-          <article class="item-card bar-item">
-            <h3>Rexi Õunasiider</h3>
-            <span class="item-card-price">$795</span>
-          </article>
-          <article class="item-card bar-item">
-            <h3>Kirsi-Rex Siider</h3>
-            <span class="item-card-price">$825</span>
-          </article>
-        </div>
-      </div>
-
-      <div class="bar-category-block">
-        <h3 class="bar-section-title">🍷 Veinid</h3>
-        <div class="item-card-grid compact-grid">
-          <article class="item-card bar-item">
-            <h3>Rexi Punane Vein</h3>
-            <span class="item-card-price">$895</span>
-          </article>
-          <article class="item-card bar-item">
-            <h3>Jurassic Roosa Vein</h3>
-            <span class="item-card-price">$905</span>
-          </article>
-        </div>
-      </div>
-
-      <div class="bar-category-block">
-        <h3 class="bar-section-title">🍹 Kokteilid</h3>
-        <div class="item-card-grid compact-grid">
-          <article class="item-card bar-item">
-            <h3>Rexi Tropical</h3>
-            <span class="item-card-price">$925</span>
-          </article>
-          <article class="item-card bar-item">
-            <h3>Rexi Punane Sangria</h3>
-            <span class="item-card-price">$945</span>
-          </article>
-        </div>
-      </div>
-
-      <div class="bar-category-block">
-        <h3 class="bar-section-title">🧃 Mokteilid</h3>
-        <div class="item-card-grid compact-grid">
-          <article class="item-card bar-item">
-            <h3>Väike Rex</h3>
-            <span class="item-card-price">$785</span>
-          </article>
-          <article class="item-card bar-item">
-            <h3>Roosa Fossiil</h3>
-            <span class="item-card-price">$805</span>
-          </article>
-        </div>
-      </div>
-
-    </section>
-
-
+        </section>
       </div>
     </div>
 
   </div>
-
 </main>
+
 
 <footer class="site-footer">
   <strong>🦖 REX'S DINER</strong>
@@ -1274,42 +533,6 @@ body {
 </footer>
 
 <script src="script.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const sectionLinks = [...document.querySelectorAll('.menu-side-link[data-menu-target]')];
-  const sections = sectionLinks
-    .map(link => document.getElementById(link.dataset.menuTarget))
-    .filter(Boolean);
-
-  if (!sectionLinks.length || !sections.length || !('IntersectionObserver' in window)) return;
-
-  const setActive = (id) => {
-    sectionLinks.forEach(link => {
-      link.classList.toggle('active', link.dataset.menuTarget === id);
-    });
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-    if (visible.length) {
-      setActive(visible[0].target.id);
-    }
-  }, {
-    rootMargin: '-18% 0px -62% 0px',
-    threshold: [0.05, 0.2, 0.4]
-  });
-
-  sections.forEach(section => observer.observe(section));
-
-  sectionLinks.forEach(link => {
-    link.addEventListener('click', () => setActive(link.dataset.menuTarget));
-  });
-});
-</script>
 
 </body>
 </html>

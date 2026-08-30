@@ -5,366 +5,220 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Meist | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=90">
+  <link rel="stylesheet" href="styles.css?v=110">
+  
+<style>
+/* =========================================================
+   REX'S OPEN STYLE – VÄHEM KASTE, ROHKEM ÕHKU
+   ========================================================= */
 
-  <style>
-    /* =========================================================
-       MEIST – UUS NAVY + DUSTY ROSE STIIL
-       ========================================================= */
+body {
+  background:
+    radial-gradient(circle at 92% 8%, rgba(207,120,151,.11), transparent 27rem),
+    radial-gradient(circle at 6% 58%, rgba(33,184,181,.045), transparent 24rem),
+    #041019;
+}
 
-    body {
-      background:
-        radial-gradient(circle at 92% 7%, rgba(207,120,151,.105), transparent 28rem),
-        radial-gradient(circle at 4% 52%, rgba(207,120,151,.055), transparent 25rem),
-        radial-gradient(circle at 78% 92%, rgba(33,184,181,.05), transparent 25rem),
-        #041019;
-    }
+.open-page {
+  max-width: 1180px;
+}
 
-    .about-page {
-      max-width: 1180px;
-    }
+.open-title {
+  padding: 38px 0 34px;
+  border-bottom: 1px solid rgba(207,120,151,.16);
+}
 
-    .about-hero {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
-      gap: 42px;
-      align-items: center;
-      padding: clamp(34px, 5vw, 56px);
-      background:
-        radial-gradient(circle at 92% 8%, rgba(207,120,151,.18), transparent 18rem),
-        radial-gradient(circle at 6% 92%, rgba(33,184,181,.08), transparent 17rem),
-        linear-gradient(135deg, #0b2330, #103343 60%, #081a24);
-      border: 1px solid rgba(207,120,151,.22);
-      border-radius: 32px;
-      box-shadow: 0 20px 50px rgba(0,0,0,.24);
-    }
+.open-title .eyebrow {
+  margin: 0 0 10px;
+  color: #e1a2b8;
+}
 
-    .about-hero::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 36px;
-      bottom: 36px;
-      width: 4px;
-      border-radius: 0 999px 999px 0;
-      background: linear-gradient(180deg, #e1a2b8, #cf7897, #21b8b5);
-    }
+.open-title h1 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6vw, 72px);
+  line-height: .96;
+  letter-spacing: -.03em;
+}
 
-    .about-hero-copy {
-      position: relative;
-      z-index: 1;
-    }
+.open-title > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #aebfc6;
+  font-size: 15px;
+  line-height: 1.65;
+}
 
-    .about-kicker,
-    .about-section-label {
-      margin: 0 0 10px;
-      color: #e1a2b8;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
+.open-section {
+  padding: 54px 0;
+  border-bottom: 1px solid rgba(207,120,151,.14);
+}
 
-    .about-hero h2,
-    .about-section h2 {
-      margin: 0;
-      color: #fff1d2;
-      font-family: Georgia, "Times New Roman", serif;
-      line-height: 1.02;
-    }
+.open-section:last-child {
+  border-bottom: 0;
+}
 
-    .about-hero h2 {
-      max-width: 640px;
-      font-size: clamp(34px, 4.5vw, 52px);
-    }
+.open-kicker {
+  margin: 0 0 10px;
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
 
-    .about-hero-copy > p:not(.about-kicker) {
-      max-width: 690px;
-      margin: 18px 0 0;
-      color: #b7c5ca;
-      line-height: 1.65;
-    }
+.open-section h2 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.03;
+}
 
-    .about-route {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 9px;
-      margin-top: 25px;
-    }
+.open-section p {
+  color: #aebfc6;
+  line-height: 1.65;
+}
 
-    .about-route span {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(207,120,151,.11);
-      border: 1px solid rgba(207,120,151,.20);
-      color: #f7e0e8;
-      font-size: 11px;
-      font-weight: 900;
-    }
+.open-link {
+  display: inline-block;
+  color: #dda0b6;
+  font-size: 12px;
+  font-weight: 900;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(207,120,151,.48);
+}
 
-    .about-route .route-arrow {
-      padding-left: 10px;
-      padding-right: 10px;
-      color: #f2c04b;
-      background: rgba(242,192,75,.07);
-      border-color: rgba(242,192,75,.12);
-    }
+.open-link:hover {
+  color: #fff1d2;
+}
 
-    .about-brief {
-      position: relative;
-      z-index: 1;
-      padding: 24px;
-      background: rgba(4,16,25,.30);
-      border: 1px solid rgba(207,120,151,.16);
-      border-radius: 24px;
-    }
+.open-rule {
+  border: 0;
+  border-top: 1px solid rgba(207,120,151,.14);
+  margin: 28px 0;
+}
 
-    .about-brief h3 {
-      margin: 0 0 17px;
-      color: #fff1d2;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 27px;
-    }
+.open-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(207,120,151,.09);
+  color: #efdbe2;
+  font-size: 11px;
+  font-weight: 900;
+}
 
-    .about-brief-row {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 13px;
-      align-items: center;
-      padding: 13px 0;
-    }
+@media (max-width: 760px) {
+  .open-title {
+    padding-top: 28px;
+  }
 
-    .about-brief-row + .about-brief-row {
-      border-top: 1px solid rgba(207,120,151,.13);
-    }
+  .open-section {
+    padding: 42px 0;
+  }
+}
+</style>
 
-    .about-brief-icon {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      background: rgba(207,120,151,.12);
-      font-size: 22px;
-    }
+  
+<style>
+.about-story-open {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+  gap: 58px;
+}
 
-    .about-brief-row strong {
-      display: block;
-      color: #fff4e6;
-      font-size: 14px;
-    }
+.about-facts {
+  padding-left: 34px;
+  border-left: 1px solid rgba(207,120,151,.18);
+}
 
-    .about-brief-row span {
-      display: block;
-      margin-top: 3px;
-      color: #9eb3bb;
-      font-size: 11px;
-      line-height: 1.4;
-    }
+.about-fact {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 14px 0;
+}
 
-    .about-section {
-      margin-top: 24px;
-      padding: 34px;
-      background:
-        radial-gradient(circle at 98% 0%, rgba(207,120,151,.08), transparent 14rem),
-        #0b2330;
-      border: 1px solid rgba(207,120,151,.18);
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.16);
-    }
+.about-fact + .about-fact {
+  border-top: 1px solid rgba(207,120,151,.10);
+}
 
-    .about-section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, .55fr);
-      gap: 30px;
-      align-items: end;
-      padding-bottom: 22px;
-      border-bottom: 1px solid rgba(207,120,151,.14);
-    }
+.about-fact > span:first-child {
+  font-size: 24px;
+}
 
-    .about-section h2 {
-      font-size: clamp(30px, 3.8vw, 43px);
-    }
+.about-fact strong {
+  display: block;
+  color: #fff1d2;
+}
 
-    .about-section-head > p {
-      margin: 0;
-      color: #9fb2ba;
-      font-size: 13px;
-      line-height: 1.6;
-    }
+.about-fact span:last-child {
+  color: #91a8b0;
+  font-size: 12px;
+  line-height: 1.5;
+}
 
-    .leadership {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 24px;
-    }
+.leadership-open {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 46px;
+  margin-top: 28px;
+}
 
-    .leader {
-      position: relative;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 56px minmax(0, 1fr);
-      gap: 16px;
-      padding: 22px;
-      background:
-        linear-gradient(135deg, rgba(207,120,151,.055), transparent 58%),
-        #103343;
-      border: 1px solid rgba(207,120,151,.18);
-      border-radius: 21px;
-    }
+.leader-open {
+  padding-top: 18px;
+  border-top: 2px solid rgba(207,120,151,.38);
+}
 
-    .leader::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 20px;
-      width: 58px;
-      height: 3px;
-      border-radius: 0 0 999px 999px;
-      background: linear-gradient(90deg, #cf7897, #e1a2b8);
-    }
+.leader-open h3 {
+  margin: 0;
+  color: #fff1d2;
+  font-size: 20px;
+}
 
-    .leader-icon {
-      display: grid;
-      place-items: center;
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: rgba(207,120,151,.13);
-      font-size: 25px;
-    }
+.leader-open small {
+  display: block;
+  margin: 5px 0 10px;
+  color: #dda0b6;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
 
-    .leader h3 {
-      margin: 0;
-      color: #fff1d2;
-      font-size: 20px;
-    }
+.values-open {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 22px;
+}
 
-    .leader-role {
-      display: block;
-      margin: 4px 0 9px;
-      color: #e1a2b8;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
+.values-open span {
+  color: #e7d7dd;
+  font-size: 12px;
+  font-weight: 900;
+}
 
-    .leader p {
-      margin: 0;
-      color: #a9bbc1;
-      font-size: 13px;
-      line-height: 1.55;
-    }
+.values-open span::before {
+  content: "•";
+  color: #cf7897;
+  margin-right: 8px;
+}
 
-    .about-bottom {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
-      gap: 22px;
-      margin-top: 24px;
-    }
+@media (max-width: 820px) {
+  .about-story-open,
+  .leadership-open {
+    grid-template-columns: 1fr;
+  }
 
-    .about-values,
-    .about-numbers {
-      padding: 30px;
-      background:
-        radial-gradient(circle at 95% 3%, rgba(207,120,151,.08), transparent 12rem),
-        #0b2330;
-      border: 1px solid rgba(207,120,151,.18);
-      border-radius: 26px;
-    }
+  .about-facts {
+    padding-left: 0;
+    border-left: 0;
+  }
+}
+</style>
 
-    .about-values h2,
-    .about-numbers h2 {
-      margin: 0 0 13px;
-      color: #fff1d2;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 30px;
-    }
-
-    .about-values > p {
-      margin: 0;
-      color: #a9bbc1;
-      line-height: 1.65;
-    }
-
-    .value-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 20px;
-    }
-
-    .value-line span {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(207,120,151,.10);
-      border: 1px solid rgba(207,120,151,.18);
-      color: #f1dfe5;
-      font-size: 11px;
-      font-weight: 900;
-    }
-
-    .about-number-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .about-number {
-      display: grid;
-      grid-template-columns: 64px 1fr;
-      gap: 13px;
-      align-items: center;
-      padding-bottom: 12px;
-    }
-
-    .about-number + .about-number {
-      padding-top: 12px;
-      border-top: 1px solid rgba(207,120,151,.13);
-    }
-
-    .about-number strong {
-      color: #f2c04b;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-    }
-
-    .about-number span {
-      color: #afc0c6;
-      font-size: 12px;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 900px) {
-      .about-hero,
-      .about-section-head,
-      .about-bottom {
-        grid-template-columns: 1fr;
-      }
-
-      .leadership {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .about-hero,
-      .about-section,
-      .about-values,
-      .about-numbers {
-        padding: 23px 20px;
-        border-radius: 23px;
-      }
-
-      .leader {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -386,156 +240,107 @@
   </nav>
 </header>
 
-<main class="page">
-  <div class="page-wrap about-page">
 
-    <div class="page-title">
+<main class="page">
+  <div class="page-wrap open-page">
+
+    <div class="open-title">
       <p class="eyebrow">MEIE LUGU</p>
       <h1>Rex’s Diner</h1>
       <p>Uus nimi, tuttav hing ja natuke ajalugu igas ampsus.</p>
     </div>
 
-    <section class="about-hero">
-
-      <div class="about-hero-copy">
-        <p class="about-kicker">CASEY’ST REX’SINI</p>
+    <section class="open-section about-story-open">
+      <div>
+        <p class="open-kicker">CASEY’ST REX’SINI</p>
         <h2>Üks diner, kaks peatükki.</h2>
-
         <p>
           Enne Rex’s Dineriks saamist tunti meid linnas Casey’s Dinerina,
           mis asus Route 68 ääres suunakoodil <strong>4023</strong>.
           Seal sai alguse suur osa loost, mis elab Rex’sis edasi tänaseni.
         </p>
-
         <p>
           Uude koju kolides sai diner uue nime ja uue peatüki, kuid kõike vana
           ei olnud põhjust maha jätta. Seetõttu kannavad mõned road tänaseni
-          Casey nime ning ka <strong>Casey Kodune Kombo</strong> on endiselt menüüs.
+          Casey nime ning Casey Kodune Kombo on endiselt menüüs.
         </p>
 
-        <div class="about-route">
+        <div class="story-route">
           <span>Casey’s Diner • 4023</span>
-          <span class="route-arrow">→</span>
+          <span class="route-dot">→</span>
           <span>Rex’s Diner • 3056</span>
         </div>
       </div>
 
-      <aside class="about-brief">
-        <p class="about-section-label">REX’S TÄNA</p>
-        <h3>Uues kodus, sama hing.</h3>
+      <aside class="about-facts">
+        <p class="open-kicker">REX’S TÄNA</p>
 
-        <div class="about-brief-row">
-          <div class="about-brief-icon">📍</div>
-          <div>
-            <strong>Senora Way</strong>
-            <span>Suuna­kood 3056 • Tuff</span>
-          </div>
+        <div class="about-fact">
+          <span>📍</span>
+          <div><strong>Senora Way</strong><span>Suuna­kood 3056 • Tuff</span></div>
         </div>
 
-        <div class="about-brief-row">
-          <div class="about-brief-icon">🍽️</div>
-          <div>
-            <strong>Kodune menüü</strong>
-            <span>Vanad lemmikud ja Rex’si enda road</span>
-          </div>
+        <div class="about-fact">
+          <span>🍽️</span>
+          <div><strong>Kodune menüü</strong><span>Vanad lemmikud ja Rex’si enda road</span></div>
         </div>
 
-        <div class="about-brief-row">
-          <div class="about-brief-icon">🦖</div>
-          <div>
-            <strong>Retro diner</strong>
-            <span>Tuttavad näod, mõnus õhkkond ja oma lugu</span>
-          </div>
+        <div class="about-fact">
+          <span>🦖</span>
+          <div><strong>Retro diner</strong><span>Tuttavad näod, mõnus õhkkond ja oma lugu</span></div>
         </div>
       </aside>
-
     </section>
 
-    <section class="about-section">
-      <div class="about-section-head">
-        <div>
-          <p class="about-section-label">JUHTKOND</p>
-          <h2>Inimesed Rex’si taga.</h2>
-        </div>
+    <section class="open-section">
+      <p class="open-kicker">JUHTKOND</p>
+      <h2>Inimesed Rex’si taga.</h2>
+      <p>
+        Rex’s Dineri juhtimine on jagatud nii, et igapäevased otsused,
+        ootamatud olukorrad ja meeskonna toimimine ei jääks ühe inimese õlule.
+      </p>
 
-        <p>
-          Rex’s Dineri juhtimine on jagatud nii, et igapäevased otsused,
-          ootamatud olukorrad ja meeskonna toimimine ei jääks ühe inimese õlule.
-        </p>
-      </div>
-
-      <div class="leadership">
-        <article class="leader">
-          <div class="leader-icon">🦖</div>
-          <div>
-            <h3>Rosabella Lane</h3>
-            <span class="leader-role">Omanik</span>
-            <p>
-              Hoiab Rex’s Dineri igapäevasel toimimisel silma peal ning vastutab
-              suuremate otsuste ja dineri üldise suuna eest.
-            </p>
-          </div>
+      <div class="leadership-open">
+        <article class="leader-open">
+          <h3>Rosabella Lane</h3>
+          <small>OMANIK</small>
+          <p>
+            Hoiab Rex’s Dineri igapäevasel toimimisel silma peal ning vastutab
+            suuremate otsuste ja dineri üldise suuna eest.
+          </p>
         </article>
 
-        <article class="leader">
-          <div class="leader-icon">🤝</div>
-          <div>
-            <h3>Miyamoto Kenshin</h3>
-            <span class="leader-role">Kaasomanik</span>
-            <p>
-              Toetab juhtimist, aitab igapäevaste otsuste ja ootamatute
-              olukordadega ning hoiab koos Rosabellaga Rex’si sujuvalt toimimas.
-            </p>
-          </div>
+        <article class="leader-open">
+          <h3>Miyamoto Kenshin</h3>
+          <small>KAASOMANIK</small>
+          <p>
+            Toetab juhtimist, aitab igapäevaste otsuste ja ootamatute olukordadega
+            ning hoiab koos Rosabellaga Rex’si sujuvalt toimimas.
+          </p>
         </article>
       </div>
     </section>
 
-    <div class="about-bottom">
+    <section class="open-section">
+      <p class="open-kicker">MIS MEID ISELOOMUSTAB?</p>
+      <h2>Rex’s ei ole lihtsalt uus nimi.</h2>
+      <p>
+        Meile on oluline kodune toit, sõbralik teenindus, tuttav retrohõng
+        ja see, et dineril oleks oma iseloom. Rex’s on uus peatükk,
+        kuid Casey’si ajalugu jääb selle loo osaks.
+      </p>
 
-      <section class="about-values">
-        <p class="about-section-label">MIS MEID ISELOOMUSTAB?</p>
-        <h2>Rex’s ei ole lihtsalt uus nimi.</h2>
-        <p>
-          Meile on oluline kodune toit, sõbralik teenindus, tuttav retrohõng
-          ja see, et dineril oleks oma iseloom. Rex’s on uus peatükk,
-          kuid Casey’si ajalugu jääb selle loo osaks.
-        </p>
-
-        <div class="value-line">
-          <span>Kodune toit</span>
-          <span>Sõbralik teenindus</span>
-          <span>Retro vibe</span>
-          <span>Oma ajalugu</span>
-        </div>
-      </section>
-
-      <aside class="about-numbers">
-        <p class="about-section-label">REX’S LÜHIDALT</p>
-        <h2>Väikesed faktid.</h2>
-
-        <div class="about-number-list">
-          <div class="about-number">
-            <strong>3056</strong>
-            <span>Rex’s Dineri praegune asukoht Senora Wayl</span>
-          </div>
-
-          <div class="about-number">
-            <strong>4023</strong>
-            <span>Koht, kus Casey’s Dineri lugu alguse sai</span>
-          </div>
-
-          <div class="about-number">
-            <strong>🦖</strong>
-            <span>Rex approved, loomulikult :P</span>
-          </div>
-        </div>
-      </aside>
-
-    </div>
+      <div class="values-open">
+        <span>Kodune toit</span>
+        <span>Sõbralik teenindus</span>
+        <span>Retro vibe</span>
+        <span>Oma ajalugu</span>
+      </div>
+    </section>
 
   </div>
 </main>
+
 
 <footer class="site-footer">
   <strong>🦖 REX'S DINER</strong>
@@ -544,5 +349,6 @@
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -5,393 +5,212 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Kontakt | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=81">
-
-  <style>
-    /* KONTAKT LEHT */
-
-    .contact-page {
-      max-width: 1180px;
-    }
-
-    .contact-main-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .contact-big-card,
-    .contact-management,
-    .contact-reasons,
-    .contact-jobs-note {
-      background:
-        linear-gradient(145deg, rgba(255,255,255,.018), rgba(255,255,255,0)),
-        #0b2330;
-      border: 1px solid rgba(142,189,199,.18);
-      border-radius: 26px;
-      box-shadow: 0 12px 30px rgba(0,0,0,.16);
-    }
-
-    .contact-big-card {
-      min-height: 260px;
-      padding: 30px;
-    }
-
-    .contact-big-icon {
-      display: grid;
-      place-items: center;
-      width: 58px;
-      height: 58px;
-      margin-bottom: 18px;
-      border-radius: 18px;
-      background: rgba(207,120,151,.12);
-      border: 1px solid rgba(207,120,151,.18);
-      font-size: 29px;
-    }
-
-    .contact-big-card h2,
-    .contact-management h2,
-    .contact-reasons h2,
-    .contact-jobs-note h2 {
-      margin: 0 0 12px;
-      color: #fff1d2;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      line-height: 1.05;
-    }
-
-    .contact-big-card p,
-    .contact-management p,
-    .contact-reasons p,
-    .contact-jobs-note p {
-      color: #aebfc6;
-    }
-
-    .contact-location-code {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 12px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      color: #231a05;
-      background: #f2c04b;
-      font-weight: 900;
-      font-size: 13px;
-    }
-
-    .contact-management {
-      margin-top: 22px;
-      padding: 30px;
-    }
-
-    .management-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .management-card {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 20px;
-      background: #103343;
-      border: 1px solid rgba(121,216,213,.14);
-      border-radius: 20px;
-    }
-
-    .management-avatar {
-      display: grid;
-      place-items: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(207,120,151,.13);
-      font-size: 24px;
-    }
-
-    .management-card h3 {
-      margin: 0 0 4px;
-      color: #fff1d2;
-      font-size: 19px;
-    }
-
-    .management-card span {
-      display: block;
-      margin-bottom: 8px;
-      color: #dda0b6;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .management-card p {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .contact-bottom-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr);
-      gap: 20px;
-      margin-top: 22px;
-    }
-
-    .contact-reasons,
-    .contact-jobs-note {
-      padding: 28px;
-    }
-
-    .reason-list {
-      display: grid;
-      gap: 11px;
-      margin-top: 18px;
-    }
-
-    .reason-item {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px;
-      align-items: center;
-      padding: 13px 15px;
-      background: #103343;
-      border: 1px solid rgba(121,216,213,.12);
-      border-radius: 16px;
-    }
-
-    .reason-item span:first-child {
-      font-size: 20px;
-    }
-
-    .reason-item strong {
-      color: #eef4ef;
-      font-size: 14px;
-    }
-
-    .contact-jobs-note {
-      background:
-        radial-gradient(circle at 90% 10%, rgba(207,120,151,.10), transparent 12rem),
-        #0b2330;
-    }
-
-    .contact-jobs-note .btn {
-      margin-top: 10px;
-    }
-
-    @media (max-width: 860px) {
-      .contact-main-grid,
-      .management-grid,
-      .contact-bottom-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .contact-big-card,
-      .contact-management,
-      .contact-reasons,
-      .contact-jobs-note {
-        padding: 22px;
-        border-radius: 22px;
-      }
-
-      .management-card {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-jobs-note .btn {
-        width: 100%;
-      }
-    }
-  </style>
-
+  <link rel="stylesheet" href="styles.css?v=110">
+  
 <style>
 /* =========================================================
-   REX'S – NAVY + ROOSA TASAKAAL
-   Navy jääb põhitooniks, dusty rose on nüüd nähtavam aktsent.
+   REX'S OPEN STYLE – VÄHEM KASTE, ROHKEM ÕHKU
    ========================================================= */
 
 body {
   background:
-    radial-gradient(circle at 92% 7%, rgba(207,120,151,.105), transparent 28rem),
-    radial-gradient(circle at 4% 52%, rgba(207,120,151,.055), transparent 25rem),
-    radial-gradient(circle at 78% 92%, rgba(33,184,181,.05), transparent 25rem),
-    #041019 !important;
+    radial-gradient(circle at 92% 8%, rgba(207,120,151,.11), transparent 27rem),
+    radial-gradient(circle at 6% 58%, rgba(33,184,181,.045), transparent 24rem),
+    #041019;
 }
 
-.site-header {
-  border-bottom-color: rgba(207,120,151,.22) !important;
-  box-shadow: 0 8px 30px rgba(0,0,0,.22);
+.open-page {
+  max-width: 1180px;
 }
 
-.site-header::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: linear-gradient(90deg,
-    transparent 3%,
-    rgba(207,120,151,.72) 26%,
-    rgba(33,184,181,.48) 62%,
-    transparent 97%);
-  pointer-events: none;
+.open-title {
+  padding: 38px 0 34px;
+  border-bottom: 1px solid rgba(207,120,151,.16);
 }
 
-.eyebrow {
-  color: #e1a2b8 !important;
+.open-title .eyebrow {
+  margin: 0 0 10px;
+  color: #e1a2b8;
 }
 
-.page-title::after {
-  width: 96px !important;
-  height: 4px !important;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8, #21b8b5) !important;
+.open-title h1 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(46px, 6vw, 72px);
+  line-height: .96;
+  letter-spacing: -.03em;
 }
 
-.main-nav a.active:not(.nav-cta) {
-  color: #fff4f7 !important;
-  background: rgba(207,120,151,.13) !important;
-  border-color: rgba(207,120,151,.22) !important;
+.open-title > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: #aebfc6;
+  font-size: 15px;
+  line-height: 1.65;
 }
 
-.main-nav .nav-cta,
-.btn-primary {
-  background: #a95774 !important;
+.open-section {
+  padding: 54px 0;
+  border-bottom: 1px solid rgba(207,120,151,.14);
 }
 
-.main-nav .nav-cta:hover,
-.btn-primary:hover {
-  background: #cf7897 !important;
+.open-section:last-child {
+  border-bottom: 0;
 }
 
-/* Tavalised sisukaardid saavad nähtava, aga rahuliku roosa kuma */
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.quick-info-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.apply-choice,
-.after-apply,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note,
-.management-card,
-.reason-item,
-.menu-price-note {
-  border-color: rgba(207,120,151,.20) !important;
+.open-kicker {
+  margin: 0 0 10px;
+  color: #e1a2b8;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
 
-.card,
-.home-card,
-.home-story-card,
-.home-location-card,
-.jobs-intro,
-.jobs-info-card,
-.apply-section,
-.contact-big-card,
-.contact-management,
-.contact-reasons,
-.contact-jobs-note {
-  background:
-    radial-gradient(circle at 96% 3%, rgba(207,120,151,.105), transparent 13rem),
-    linear-gradient(145deg, rgba(207,120,151,.025), rgba(255,255,255,0) 52%),
-    #0b2330 !important;
+.open-section h2 {
+  margin: 0;
+  color: #fff1d2;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.03;
 }
 
-.quick-info-card,
-.management-card,
-.reason-item,
-.job-task,
-.apply-choice {
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.055), rgba(16,51,67,0) 58%),
-    #103343 !important;
+.open-section p {
+  color: #aebfc6;
+  line-height: 1.65;
 }
 
-.card,
-.home-story-card,
-.home-location-card,
-.jobs-info-card,
-.contact-big-card,
-.contact-management,
-.contact-reasons {
-  position: relative;
-  overflow: hidden;
+.open-link {
+  display: inline-block;
+  color: #dda0b6;
+  font-size: 12px;
+  font-weight: 900;
+  padding-bottom: 3px;
+  border-bottom: 1px solid rgba(207,120,151,.48);
 }
 
-.card::after,
-.home-story-card::after,
-.home-location-card::after,
-.jobs-info-card::after,
-.contact-big-card::after,
-.contact-management::after,
-.contact-reasons::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  right: auto;
-  top: 0;
-  width: 72px;
-  height: 3px;
-  border-radius: 0 0 999px 999px;
-  background: linear-gradient(90deg, #cf7897, #e1a2b8);
-  opacity: .88;
-  pointer-events: none;
+.open-link:hover {
+  color: #fff1d2;
 }
 
-.stat {
-  background:
-    radial-gradient(circle at 85% 10%, rgba(207,120,151,.10), transparent 7rem),
-    #103343 !important;
-  border-color: rgba(207,120,151,.18) !important;
+.open-rule {
+  border: 0;
+  border-top: 1px solid rgba(207,120,151,.14);
+  margin: 28px 0;
 }
 
-.stat strong,
-.quick-info-card strong {
-  color: #fff0e1 !important;
-}
-
-.site-footer {
-  border-top-color: rgba(207,120,151,.20) !important;
+.open-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(207,120,151,.09);
+  color: #efdbe2;
+  font-size: 11px;
+  font-weight: 900;
 }
 
 @media (max-width: 760px) {
-  body {
-    background:
-      radial-gradient(circle at 95% 6%, rgba(207,120,151,.08), transparent 18rem),
-      #041019 !important;
+  .open-title {
+    padding-top: 28px;
+  }
+
+  .open-section {
+    padding: 42px 0;
   }
 }
 </style>
 
-
+  
 <style>
-.contact-big-icon,
-.management-avatar {
-  background: rgba(207,120,151,.16) !important;
-  border-color: rgba(207,120,151,.24) !important;
+.contact-open-top {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 58px;
 }
 
-.management-card:nth-child(2) {
-  background:
-    linear-gradient(135deg, rgba(207,120,151,.08), transparent 58%),
-    #103343 !important;
+.contact-open-col {
+  padding-top: 18px;
+  border-top: 2px solid rgba(207,120,151,.36);
 }
 
-.contact-jobs-note {
-  background:
-    radial-gradient(circle at 92% 8%, rgba(207,120,151,.16), transparent 13rem),
-    #0b2330 !important;
+.contact-open-col h2 {
+  font-size: 34px;
+}
+
+.contact-code {
+  display: inline-block;
+  margin-top: 13px;
+  color: #f2c04b;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.management-open {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 42px;
+  margin-top: 26px;
+}
+
+.management-open article {
+  padding-top: 17px;
+  border-top: 1px solid rgba(207,120,151,.24);
+}
+
+.management-open h3 {
+  margin: 0;
+  color: #fff1d2;
+}
+
+.management-open small {
+  display: block;
+  margin: 4px 0 9px;
+  color: #dda0b6;
+  font-weight: 900;
+  letter-spacing: .10em;
+}
+
+.contact-reasons-open {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 36px;
+  margin-top: 23px;
+}
+
+.contact-reason {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(207,120,151,.10);
+}
+
+.contact-reason span:first-child {
+  font-size: 21px;
+}
+
+.contact-reason strong {
+  color: #e8eeee;
+  font-size: 13px;
+}
+
+.contact-work-open {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 34px;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .contact-open-top,
+  .management-open,
+  .contact-reasons-open,
+  .contact-work-open {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
@@ -412,123 +231,85 @@ body {
     <a href="eripakkumine.html">Eripakkumine</a>
     <a href="meist.html">Meist</a>
     <a href="toole.html">Tööle</a>
-    <a class="nav-cta active" href="kontakt.html">Kontakt</a>
+    <a class="active nav-cta" href="kontakt.html">Kontakt</a>
   </nav>
 </header>
 
-<main class="page">
-  <div class="page-wrap contact-page">
 
-    <div class="page-title">
+<main class="page">
+  <div class="page-wrap open-page">
+
+    <div class="open-title">
       <p class="eyebrow">VÕTA MEIEGA ÜHENDUST</p>
       <h1>Kontakt</h1>
       <p>Kui sul on küsimus, koostööidee või tahad lihtsalt teada, kust Rex’si leida, oled õiges kohas.</p>
     </div>
 
-    <section class="contact-main-grid">
-
-      <article class="contact-big-card">
-        <div class="contact-big-icon">📍</div>
-        <h2>Leia meid</h2>
+    <section class="open-section contact-open-top">
+      <div class="contact-open-col">
+        <p class="open-kicker">📍 LEIA MEID</p>
+        <h2>Senora Way, Tuff.</h2>
         <p>
-          Rex’s Diner asub <strong>Senora Wayl</strong>, Tuffis.
-          Kui tahad tulla kohapeale sööma, küsima või lihtsalt läbi astuma,
-          leiad meid suunakoodilt:
+          Tule kohapeale sööma, küsima või lihtsalt läbi astuma.
+          Rex’s Dineri leiad suunakoodilt:
         </p>
-        <div class="contact-location-code">3056</div>
-      </article>
+        <span class="contact-code">3056</span>
+      </div>
 
-      <article class="contact-big-card">
-        <div class="contact-big-icon">📞</div>
-        <h2>Võta ühendust</h2>
+      <div class="contact-open-col">
+        <p class="open-kicker">📞 VÕTA ÜHENDUST</p>
+        <h2>Kõige kiiremini töötelefoni kaudu.</h2>
         <p>
-          Kõige kiiremini saad meiega ühendust Rex’s Dineri
-          <strong>töötelefoni kaudu</strong> või tulles kohapeale.
+          Rex’s Dineriga saad ühendust töötelefoni kaudu või tulles kohapeale.
+          Kui küsimus vajab juhtkonna tähelepanu, anname info vajadusel edasi õigele inimesele.
         </p>
-        <p>
-          Kui küsimus vajab juhtkonna tähelepanu, anname info vajadusel
-          edasi õigele inimesele.
-        </p>
-      </article>
-
+      </div>
     </section>
 
-    <section class="contact-management">
-      <p class="eyebrow">JUHTKOND</p>
+    <section class="open-section">
+      <p class="open-kicker">JUHTKOND</p>
       <h2>Kes hoiab Rex’sil silma peal?</h2>
-      <p>
-        Üldiste, juhtimist puudutavate või olulisemate küsimustega saab pöörduda Rex’s Dineri juhtkonna poole.
-      </p>
 
-      <div class="management-grid">
-        <article class="management-card">
-          <div class="management-avatar">🦖</div>
-          <div>
-            <h3>Rosabella Lane</h3>
-            <span>Omanik</span>
-            <p>
-              Vastutab Rex’s Dineri igapäevase toimimise, suuremate otsuste
-              ja üldise suuna eest.
-            </p>
-          </div>
+      <div class="management-open">
+        <article>
+          <h3>Rosabella Lane</h3>
+          <small>OMANIK</small>
+          <p>Vastutab Rex’s Dineri igapäevase toimimise, suuremate otsuste ja üldise suuna eest.</p>
         </article>
 
-        <article class="management-card">
-          <div class="management-avatar">🤝</div>
-          <div>
-            <h3>Miyamoto Kenshin</h3>
-            <span>Kaasomanik</span>
-            <p>
-              Toetab juhtimist, aitab igapäevaste küsimuste ja otsustega
-              ning on oluline osa Rex’si toimimisest.
-            </p>
-          </div>
+        <article>
+          <h3>Miyamoto Kenshin</h3>
+          <small>KAASOMANIK</small>
+          <p>Toetab juhtimist, aitab igapäevaste küsimuste ja otsustega ning on oluline osa Rex’si toimimisest.</p>
         </article>
       </div>
     </section>
 
-    <section class="contact-bottom-grid">
+    <section class="open-section">
+      <p class="open-kicker">MILLE PUHUL ÜHENDUST VÕTTA?</p>
+      <h2>Küsi julgelt.</h2>
 
-      <article class="contact-reasons">
-        <h2>Mille puhul meiega ühendust võtta?</h2>
+      <div class="contact-reasons-open">
+        <div class="contact-reason"><span>🍽️</span><strong>Küsimused Rex’s Dineri menüü või teeninduse kohta</strong></div>
+        <div class="contact-reason"><span>🤝</span><strong>Koostööpakkumised ja ettevõtetevahelised kokkulepped</strong></div>
+        <div class="contact-reason"><span>💬</span><strong>Tagasiside, ettepanekud või muud Rex’si puudutavad küsimused</strong></div>
+        <div class="contact-reason"><span>📋</span><strong>Olulisemad teemad, mis vajavad juhtkonna tähelepanu</strong></div>
+      </div>
+    </section>
 
-        <div class="reason-list">
-          <div class="reason-item">
-            <span>🍽️</span>
-            <strong>Küsimused Rex’s Dineri menüü või teeninduse kohta</strong>
-          </div>
-
-          <div class="reason-item">
-            <span>🤝</span>
-            <strong>Koostööpakkumised ja ettevõtetevahelised kokkulepped</strong>
-          </div>
-
-          <div class="reason-item">
-            <span>💬</span>
-            <strong>Tagasiside, ettepanekud või muud Rex’si puudutavad küsimused</strong>
-          </div>
-
-          <div class="reason-item">
-            <span>📋</span>
-            <strong>Olulisemad teemad, mis vajavad juhtkonna tähelepanu</strong>
-          </div>
-        </div>
-      </article>
-
-      <aside class="contact-jobs-note">
-        <p class="eyebrow">OTSid TÖÖINFOT?</p>
+    <section class="open-section contact-work-open">
+      <div>
+        <p class="open-kicker">OTSID TÖÖINFOT?</p>
         <h2>Soovid Rex’si tiimiga liituda?</h2>
-        <p>
-          Tööle kandideerimise info, ootused ja Google Formsi tööavaldus
-          on kõik eraldi Tööle lehel.
-        </p>
-        <a class="btn btn-primary" href="toole.html">Vaata Tööle lehte</a>
-      </aside>
+        <p>Tööle kandideerimise info ja avaldus on eraldi Tööle lehel.</p>
+      </div>
 
+      <a class="btn btn-primary" href="toole.html">Vaata Tööle lehte</a>
     </section>
 
   </div>
 </main>
+
 
 <footer class="site-footer">
   <strong>🦖 REX'S DINER</strong>
@@ -537,5 +318,6 @@ body {
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
