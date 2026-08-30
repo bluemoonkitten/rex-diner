@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06151f">
   <title>Menüü | Rex's Diner</title>
-  <link rel="stylesheet" href="styles.css?v=12">
+  <link rel="stylesheet" href="styles.css?v=30">
 
 <style>
 /* MENÜÜ KAARDID – inline, et GitHub/browser cache ei saaks seda ära kaotada */
@@ -207,6 +207,86 @@
 }
 </style>
 
+
+<style>
+/* Menüü kiirnupud ja infoplokk */
+
+.menu-quick-info {
+  margin: 0 0 28px;
+  padding: 20px 22px;
+  background:
+    linear-gradient(135deg, rgba(225,132,165,.08), rgba(33,184,181,.05)),
+    #0b2330;
+  border: 1px solid rgba(142,189,199,.18);
+  border-radius: 22px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.14);
+}
+
+.menu-quick-info p {
+  margin: 0 0 14px;
+  color: #aebfc6;
+  font-size: 14px;
+}
+
+.menu-quick-info p a {
+  color: #e184a5;
+  font-weight: 900;
+}
+
+.menu-quick-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.menu-quick-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  color: #f8edf1;
+  background: rgba(225,132,165,.12);
+  border: 1px solid rgba(225,132,165,.19);
+  font-size: 12px;
+  font-weight: 900;
+  transition: transform .16s ease, background .16s ease;
+}
+
+.menu-quick-nav a:hover {
+  transform: translateY(-2px);
+  background: rgba(225,132,165,.20);
+}
+
+.combo-note {
+  margin: -5px 0 18px;
+  color: #aebfc6;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.menu-category {
+  scroll-margin-top: 105px;
+}
+
+@media (max-width: 680px) {
+  .menu-quick-info {
+    padding: 18px;
+  }
+
+  .menu-quick-nav a {
+    flex: 1 1 calc(50% - 9px);
+  }
+}
+
+@media (max-width: 420px) {
+  .menu-quick-nav a {
+    flex-basis: 100%;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -237,7 +317,25 @@
       <p>Vali oma lemmik — iga toit, jook ja maius on nüüd jälle eraldi kaardil.</p>
     </div>
 
-    <section class="menu-category">
+
+    <section class="menu-quick-info">
+      <p>
+        Kõik siin lehel olevad hinnad on Rex’s Dineri tavahinnad.
+        Jooksvad nädala- ja eripakkumised leiad eraldi
+        <a href="eripakkumine.html">Eripakkumise lehelt</a>.
+      </p>
+
+      <nav class="menu-quick-nav" aria-label="Menüü kategooriad">
+        <a href="#toidud">🍲 Toidud</a>
+        <a href="#joogid">🥤 Joogid</a>
+        <a href="#snakid">🥨 Snäkid</a>
+        <a href="#magusad">🍰 Magusad</a>
+        <a href="#kombod">⭐ Kombod</a>
+        <a href="#baar">🍸 Baar</a>
+      </nav>
+    </section>
+
+    <section class="menu-category" id="toidud">
       <div class="menu-category-heading">
         <span class="category-icon">🍲</span>
         <div>
@@ -285,7 +383,7 @@
       </div>
     </section>
 
-    <section class="menu-category">
+    <section class="menu-category" id="snakid">
       <div class="menu-category-heading">
         <span class="category-icon">🥨</span>
         <div>
@@ -315,7 +413,7 @@
       </div>
     </section>
 
-    <section class="menu-category">
+    <section class="menu-category" id="magusad">
       <div class="menu-category-heading">
         <span class="category-icon">🍰</span>
         <div>
@@ -351,7 +449,7 @@
       </div>
     </section>
 
-    <section class="menu-category">
+    <section class="menu-category" id="joogid">
       <div class="menu-category-heading">
         <span class="category-icon">🥤</span>
         <div>
@@ -393,7 +491,7 @@
       </div>
     </section>
 
-    <section class="menu-category combo-category">
+    <section class="menu-category combo-category" id="kombod">
       <div class="menu-category-heading">
         <span class="category-icon">⭐</span>
         <div>
@@ -401,6 +499,11 @@
           <h2>Kombod</h2>
         </div>
       </div>
+
+
+      <p class="combo-note">
+        Kombod sisaldavad mitut toodet ühe hinnaga.
+      </p>
 
       <div class="combo-card-grid">
         <article class="combo-card">
@@ -450,7 +553,7 @@
       </div>
     </section>
 
-    <section class="menu-category">
+    <section class="menu-category" id="baar">
       <div class="menu-category-heading">
         <span class="category-icon">🍸</span>
         <div>
